@@ -38,5 +38,13 @@
         "minimumQuantity": 100,
         "availableQuantity": 2000,
         "price": 45
+    },
+    {
+        "name": "Flashlight",
+        "img": "https://www.thespruce.com/thmb/pbq9FM22DPKIgEesipyeCIAlRDY=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_04_flashlight_3228-b87356b13a1944118479ab50f249e2cd.jpg",
+        "description": "Electrical repair and improvement work involves a lot of dark places, from attics and basements, to wall and ceiling cavities, to the insides of electrical boxes. ",
+        "minimumQuantity": 300,
+        "availableQuantity": 4000,
+        "price": 45
     }
 ]
