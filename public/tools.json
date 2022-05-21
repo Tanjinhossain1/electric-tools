@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Wire Striper",
+        "img": "https://www.thespruce.com/thmb/SDFRaVsN-AaxqSHU5AjIFsqMQYE=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_11_wire_strippers_3240-7a3db03ed38845bb91307384fadc2ce9.jpg",
+        "description": "Another essential electrical specialty tool for homeowners is a good pair of wire strippers. Wire strippers are used to cut and strip insulation from electrical wires. ",
+        "minimumQuantity": 100,
+        "availableQuantity": 5000,
+        "price": 37
+    },
+    {
+        "name": "Needle-Nose Pliers",
+        "img": "https://www.thespruce.com/thmb/hdbMA6f8pypK1iJPrYHfuXSNyBw=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_12_needlenosepliers_3255-0bee5993441d42ac9e5ab71611aca72a.jpg",
+        "description": "Another essential specialty electrical tool is a pair of needle-nose pliers. It will be used for twisting wires whenever you are making screw-terminal connections. ",
+        "minimumQuantity": 100,
+        "availableQuantity": 200,
+        "price": 20
+    },
+    {
+        "name": "Linesman Pliers",
+        "img": "https://www.thespruce.com/thmb/P_o__sKwQv6-7tmJnOS9rLA1CUc=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_13_linesmanpliers_3235-684cf9bb17b3408faaac6a89444cc7f9.jpg",
+        "description": "A pair of linesman pliers is an electrician's do-it-all tool. It has a squared-off end that is great for twisting wires together, a center cutting blade for trimming wire.",
+        "minimumQuantity": 100,
+        "availableQuantity": 1000,
+        "price": 40
+    },
+    {
+        "name": "Voltmeter or Multimeter",
+        "img": "https://www.thespruce.com/thmb/FTGlUM16seML5QyZNA2INw484NY=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_16_voltmeter_3237-3f55a36418f8496abc1d9f0f85f227dd.jpg",
+        "description": "A voltmeter is used to read voltage levels and verify that circuits are “live” or off. This tool gives you reading on how much voltage is being carried.",
+        "minimumQuantity": 100,
+        "availableQuantity": 1200,
+        "price": 30
+    },
+    {
+        "name": "Tongue-and-Groove Pliers",
+        "img": "https://www.thespruce.com/thmb/OQ3Mv5mE2XOA_UKy7QPmJ1s5rPg=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_09_tonguegroovepliers_3242-10f7403cafb44b7bb11ae89a31b8f865.jpg",
+        "description": "Tongue-and-groove pliers are known by many names, including channel-lock, groove joint, tongue-and-groove, and straight-jaw pliers. ",
+        "minimumQuantity": 100,
+        "availableQuantity": 2000,
+        "price": 45
+    }
+]
