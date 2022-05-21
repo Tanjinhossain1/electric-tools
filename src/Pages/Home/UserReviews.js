@@ -13,7 +13,7 @@ const UserReviews = () => {
                     </div>
                     <div class="card-body">
                         <h2 class="card-title"> Kenny Koehler</h2>
-                        <p>Table saws are undeniably the kings of cutting sheet goods. The concept is simple: place a solid table to spin a blade through the sawdust fly.</p>
+                        <p>Table saw are undeniably the kings of cutting sheet goods. The concept is simple: place a solid table to spin a blade through the sawdust fly.</p>
                     </div>
                 </div>
                 <div className='shadow-2xl flex px-4  m-2 rounded  items-center'>

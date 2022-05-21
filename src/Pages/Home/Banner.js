@@ -2,8 +2,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='text-white'>
-            <div class="hero min-h-screen bg-[#050326]">
+        <div className='text-white '>
+            <div class="hero min-h-screen bg-[#050326] pb-20">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img alt='Electric tools' src="https://i.ibb.co/RDqxhrH/alltools.webp" class="max-w-sm rounded-lg shadow-2xl" />
                     <div className='w-2/4'>

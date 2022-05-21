@@ -4,7 +4,7 @@ import { faComments, faComputer, faFlag, faUsers } from '@fortawesome/free-solid
 
 const BusinessSummary = () => {
     return (
-        <div className='my-12 '>
+        <div className='my-32 '>
             <div>
                 <h1 className='text-5xl text-center  text-[#09afb5] font-bold'>MILLIONS BUSINESS TRUST US</h1>
                 <h3 className='text-2xl mt-2 text-blue-900 font-semibold text-center'>TRY TO UNDERSTAND USERS EXPECTATION</h3>
