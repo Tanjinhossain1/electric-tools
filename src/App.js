@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
        <Route path='/signUp' element={<SignUp />}></Route>
        <Route path='/dashboard' element={<Dashboard />}>
          <Route path='myOrders' element={<MyOrders />}></Route>
+         <Route path='payment/:id' element={<Payment />}></Route>
 
        </Route>
      </Routes>

@@ -19,7 +19,7 @@ const Purchase = () => {
     if (isLoading) {
         return <Loading loading={isLoading} color={'#be03fc'}></Loading>
     }
-    const { name: toolName, price, minimumQuantity, availableQuantity } = tool;
+    const { name: toolName, price, minimumQuantity,img, availableQuantity } = tool;
 
 
     const onSubmit = (data,event) => {
@@ -29,7 +29,7 @@ const Purchase = () => {
         const number = data.number;
         const quantity = data.minimumQuantity;
         const address = data.address;
-        
+      
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
@@ -40,7 +40,7 @@ const Purchase = () => {
                     headers:{
                         'content-type':'application/json'
                     },
-                    body: JSON.stringify({email,name,number,quantity,address,price,toolName}) 
+                    body: JSON.stringify({email,name,number,quantity,address,price,toolName,img}) 
                 })
                 .then(res=>res.json())
                 .then(result =>{
