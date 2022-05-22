@@ -36,7 +36,7 @@ const Category = () => {
             </div>
             <div className='flex w-3/4 mx-auto mt-8 justify-between border bg-yellow-500 items-center p-6'>
                 <div>
-                    <h1 className='text-3xl text[#04054a] font-bold'>LIMITED EDITION GET UP TO 50% OFF.</h1>
+                    <h1 className='text-3xl text-[#04054a] font-bold'>LIMITED EDITION GET UP TO 50% OFF.</h1>
                     <p className='text-xl'>Suggestion offer work some day</p>
                 </div>
                 <div>
