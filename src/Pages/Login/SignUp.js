@@ -1,6 +1,6 @@
 import { async } from '@firebase/util';
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -16,6 +16,7 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, googleUser, GoogleLoading] = useSignInWithGoogle(auth);
 
     const [updateProfile, updating] = useUpdateProfile(auth);
 
@@ -105,7 +106,7 @@ const SignUp = () => {
                             <p><small>Already Have an Account? <Link className='text-purple-600 font-bold' to='/login'>Login</Link></small></p>
                         </form>
                         <div class="divider">OR</div>
-                        <button class="btn btn-outline">Continue With Google</button>
+                        <button onClick={()=>signInWithGoogle()} class="btn btn-outline">Continue With Google</button>
                     </div>
                 </div>
             </div >
