@@ -7,13 +7,14 @@ const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [clientSecret, setClientSecret] = useState('');
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [paymentIntent, setPaymentIntent] = useState(false)
+   
     useEffect(() => {
+        
         const { newPrice } = order[0];
         console.log(newPrice)
         if (newPrice) {
-
-
             fetch(`http://localhost:5000/create-payment`, {
                 method: 'POST',
                 headers: {
@@ -23,7 +24,7 @@ const CheckoutForm = ({ order }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-
+               
                     if (data?.clientSecret) {
                         setClientSecret(data.clientSecret)
                     }
@@ -85,9 +86,9 @@ const CheckoutForm = ({ order }) => {
                     console.log(data)
                     setLoading(false)
                 })
+            setPaymentIntent(paymentIntent.id)
         }
-        console.log(paymentIntent)
-        
+
     }
     return (
         <div>
@@ -108,9 +109,11 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                <button class="btn btn-success mt-4" type="submit" disabled={!stripe || !clientSecret}>
-                    Order
-                </button>
+                {paymentIntent ? <p className='mt-4 text-green-600 font-bold '>Your Order Compleat</p> :
+                    <button class="btn btn-success mt-4" type="submit" disabled={!stripe || !clientSecret}>
+                        Order
+                    </button>
+                }
             </form>
         </div>
     );

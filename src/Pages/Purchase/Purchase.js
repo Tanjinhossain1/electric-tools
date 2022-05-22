@@ -9,7 +9,7 @@ import Loading from '../Sheared/Loading';
 
 const Purchase = () => {
     const { id } = useParams();
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { isLoading, data: tool } = useQuery(['tool'], () =>
         fetch(`http://localhost:5000/tools/${id}`).then(res =>
@@ -33,7 +33,7 @@ const Purchase = () => {
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
-            if (minimumQuantity < data.minimumQuantity) {
+            if (minimumQuantity <= data.minimumQuantity) {
                 const newPrice = data.minimumQuantity * price
                 fetch('http://localhost:5000/purchase',{
                     method: 'POST',
@@ -46,13 +46,13 @@ const Purchase = () => {
                 .then(result =>{
                     console.log(result)
                     if(result.acknowledged){
-                        toast('Purchase Product add SuccessFully!')
+                        toast.success('Purchase Product add SuccessFully!')
                     }
                     event.target.reset()
                 })
 
             } else {
-                toast(`must be purchase ${minimumQuantity} piece tool`)
+                toast.error(`must be purchase ${minimumQuantity} piece tool`)
             }
         }
     };

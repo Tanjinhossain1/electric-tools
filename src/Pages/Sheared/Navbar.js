@@ -8,13 +8,24 @@ const Navbar = () => {
     const [user] = useAuthState(auth)
     const logout = () => {
         signOut(auth);
-      };
-    const navItems = <div>
-        <li> <Link to='/home'>Home</Link></li>
-        {user && <li><Link to='/dashboard/myOrders'>Dashboard</Link></li>}
-        {user?.email ? <li onClick={()=>logout()}>Log Out</li> :
-            <li> <Link to='/login'>Login</Link></li>}
-    </div>
+    };
+    const navItems = <>
+        <li className='text-xl'><Link to='/home'>Home</Link></li>
+        {user &&
+            <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
+        }
+        {user ? <li><button className='btn btn-ghost text-xl' onClick={() => logout()}>Log Out
+            <div class="avatar">
+                <div class="w-5 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img alt='userPhoto' src={user?.photoURL}/>
+                </div>
+            </div>
+        </button>
+        </li>
+            :
+            <li className='text-xl'><Link to='/login'>Login</Link></li>
+        }
+    </>
     return (
         <div>
             <div class="navbar bg-base-100">
