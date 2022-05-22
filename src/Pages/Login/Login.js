@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const Login = () => {
-    const [passError, setPassError] = useState('')
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
     };
+
     return (
         <div>
             <div class="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
                 <div class=" flex-col lg:flex-row-reverse">
-                    <div class="card flex-shrink-0 shadow-2xl bg-base-100">
+                    <div class="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} class="card-body">
                             <div class="form-control">
                                 <label class="label">
@@ -65,6 +65,8 @@ const Login = () => {
                                 <button class="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <div class="divider">OR</div>
+                        <button class="btn btn-outline">Continue With Google</button>
                     </div>
                 </div>
             </div >
