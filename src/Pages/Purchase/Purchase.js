@@ -34,13 +34,13 @@ const Purchase = () => {
             toast(`We have only ${availableQuantity} tools `)
         } else {
             if (minimumQuantity < data.minimumQuantity) {
-
+                const newPrice = data.minimumQuantity * price
                 fetch('http://localhost:5000/purchase',{
                     method: 'POST',
                     headers:{
                         'content-type':'application/json'
                     },
-                    body: JSON.stringify({email,name,number,quantity,address,price,toolName,img}) 
+                    body: JSON.stringify({email,name,number,quantity,address,newPrice,toolName,img}) 
                 })
                 .then(res=>res.json())
                 .then(result =>{

@@ -11,7 +11,7 @@ const Navbar = () => {
       };
     const navItems = <div>
         <li> <Link to='/home'>Home</Link></li>
-        {user && <li><Link to='/dashboard'>Dashboard</Link></li>}
+        {user && <li><Link to='/dashboard/myOrders'>Dashboard</Link></li>}
         {user?.email ? <li onClick={()=>logout()}>Log Out</li> :
             <li> <Link to='/login'>Login</Link></li>}
     </div>
