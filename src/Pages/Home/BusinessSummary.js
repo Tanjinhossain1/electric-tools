@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComments, faComputer, faFlag, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faComments, faFileCirclePlus, faScrewdriverWrench, faUsers } from '@fortawesome/free-solid-svg-icons'
 
 const BusinessSummary = () => {
     return (
@@ -10,24 +10,24 @@ const BusinessSummary = () => {
                 <h3 className='text-2xl mt-2 text-blue-900 font-semibold text-center'>TRY TO UNDERSTAND USERS EXPECTATION</h3>
                 <div className='grid md:grid-cols-2 text-center mt-12 lg:grid-cols-4'>
                     <div>
-                        <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faFlag} />
-                        <p className='text-3xl font-semibold text-blue-900 my-2'>120</p>
-                        <p className='text-xl font-semibold text-[#1bb0b3]'>Countries</p>
+                        <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faFileCirclePlus} />
+                        <p className='text-3xl font-semibold text-blue-900 my-2'>100m+</p>
+                        <p className='text-xl font-semibold text-[#1bb0b3]'>Revenue</p>
                     </div>
                     <div>
-                        <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faComputer} />
-                        <p className='text-3xl font-semibold text-blue-900 my-2'>1000+</p>
-                        <p className='text-xl font-semibold text-[#1bb0b3]'>Compleat Projects</p>
+                        <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faScrewdriverWrench} />
+                        <p className='text-3xl font-semibold text-blue-900 my-2'>100+</p>
+                        <p className='text-xl font-semibold text-[#1bb0b3]'>Tools</p>
                     </div>
                     <div>
                         <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faUsers} />
-                        <p className='text-3xl font-semibold text-blue-900 my-2'>746+</p>
-                        <p className='text-xl font-semibold text-[#1bb0b3]'>Happy Clients</p>
+                        <p className='text-3xl font-semibold text-blue-900 my-2'>7046+</p>
+                        <p className='text-xl font-semibold text-[#1bb0b3]'>Customers</p>
                     </div>
                     <div>
                         <FontAwesomeIcon className='text-7xl text-[#099ab0]' icon={faComments} />
-                        <p className='text-3xl font-semibold text-blue-900 my-2'>902+</p>
-                        <p className='text-xl font-semibold text-[#1bb0b3]'>FeedBacks</p>
+                        <p className='text-3xl font-semibold text-blue-900 my-2'>9002+</p>
+                        <p className='text-xl font-semibold text-[#1bb0b3]'>Reviews</p>
                     </div>
                 </div>
                 <div className='w-3/4 mx-auto shadow-2xl mt-8 p-6 lg:flex justify-between items-center'>
