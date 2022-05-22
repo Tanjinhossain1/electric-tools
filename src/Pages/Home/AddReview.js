@@ -7,7 +7,7 @@ const AddReview = () => {
         const rate = event.target.rate.value;
         const description = event.target.description.value;
         const review = { rate, description }
-        fetch('',{
+        fetch('http://localhost:5000/addReview',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
