@@ -1,12 +1,20 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import auth from '../../firebase.init';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+
+    const [signInWithGoogle, googleUser, GoogleLoading] = useSignInWithGoogle(auth);
+    
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
     };
-
+   
     return (
         <div>
             <div class="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
@@ -64,9 +72,10 @@ const Login = () => {
                             <div class="form-control mt-6">
                                 <button class="btn btn-primary">Login</button>
                             </div>
+                            <p><small>Don't Have an Account? <Link className='text-purple-600 font-bold' to='/signUp'>Create Account</Link></small></p>
                         </form>
                         <div class="divider">OR</div>
-                        <button class="btn btn-outline">Continue With Google</button>
+                        <button onClick={()=>signInWithGoogle()} class="btn btn-outline">Continue With Google</button>
                     </div>
                 </div>
             </div >

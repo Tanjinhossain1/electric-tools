@@ -1,12 +1,34 @@
+import { async } from '@firebase/util';
 import React from 'react';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Sheared/Loading';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        console.log(data)
-    };
 
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [updateProfile, updating] = useUpdateProfile(auth);
+
+    if (loading || updating) {
+        return <Loading loading={loading} color={'#081663'}></Loading>
+    }
+    const onSubmit = async (data, event) => {
+        console.log(data)
+        await createUserWithEmailAndPassword(data.email, data.password)
+        await updateProfile({ displayName: data.name });
+        event.target.reset()
+    };
+    console.log(user)
     return (
         <div>
             <div class="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
@@ -17,14 +39,14 @@ const SignUp = () => {
                                 <label class="label">
                                     <span class="label-text">Name</span>
                                 </label>
-                                <input className="input input-bordered w-full max-w-xs" type='text' placeholder='Your Name'   {...register("name", {
+                                <input className="input input-bordered w-full max-w-xs" type='text' placeholder='Your Name' {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is required'
                                     }
                                 })} />
-                                <label class="label">                                  
-                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                <label class="label">
+                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                                 </label>
 
                                 <label class="label">
@@ -73,10 +95,14 @@ const SignUp = () => {
                                 <label label class="label" >
                                     <p class="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
+                                <label label class="label" >
+                                    <p class="label-text-alt link link-hover text-red-500">{error && error?.message}</p>
+                                </label>
                             </div>
                             <div class="form-control mt-6">
                                 <button class="btn btn-primary">Login</button>
                             </div>
+                            <p><small>Already Have an Account? <Link className='text-purple-600 font-bold' to='/login'>Login</Link></small></p>
                         </form>
                         <div class="divider">OR</div>
                         <button class="btn btn-outline">Continue With Google</button>

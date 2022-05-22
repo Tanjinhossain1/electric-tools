@@ -5,7 +5,7 @@ import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, data: tools } = useQuery('tools', () =>
-        fetch('tools.json').then(res =>
+        fetch('http://localhost:5000/tools').then(res =>
             res.json()
         )
     )
