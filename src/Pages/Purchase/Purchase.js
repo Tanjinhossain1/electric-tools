@@ -19,7 +19,7 @@ const Purchase = () => {
     if (isLoading) {
         return <Loading loading={isLoading} color={'#be03fc'}></Loading>
     }
-    const { name, description, price, img, minimumQuantity, availableQuantity, _id } = tool;
+    const { name: toolName, price, minimumQuantity, availableQuantity } = tool;
 
 
     const onSubmit = (data,event) => {
@@ -29,6 +29,7 @@ const Purchase = () => {
         const number = data.number;
         const quantity = data.minimumQuantity;
         const address = data.address;
+        
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
@@ -39,7 +40,7 @@ const Purchase = () => {
                     headers:{
                         'content-type':'application/json'
                     },
-                    body: JSON.stringify({email,name,number,quantity,address}) 
+                    body: JSON.stringify({email,name,number,quantity,address,price,toolName}) 
                 })
                 .then(res=>res.json())
                 .then(result =>{
@@ -55,8 +56,6 @@ const Purchase = () => {
             }
         }
     };
-
-    
     return (
         <div className='w-4/4 md:w-2/4 my-20 lg:w-1/4 mx-auto p-2'>
             <form onSubmit={handleSubmit(onSubmit)}>
