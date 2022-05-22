@@ -22,16 +22,33 @@ const Purchase = () => {
     const { name, description, price, img, minimumQuantity, availableQuantity, _id } = tool;
 
 
-    const onSubmit = data => {
+    const onSubmit = (data,event) => {
         console.log(data)
         const email = user?.email;
         const name = user?.displayName;
+        const number = data.number;
+        const quantity = data.minimumQuantity;
+        const address = data.address;
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
             if (minimumQuantity < data.minimumQuantity) {
 
-                
+                fetch('http://localhost:5000/purchase',{
+                    method: 'POST',
+                    headers:{
+                        'content-type':'application/json'
+                    },
+                    body: JSON.stringify({email,name,number,quantity,address}) 
+                })
+                .then(res=>res.json())
+                .then(result =>{
+                    console.log(result)
+                    if(result.acknowledged){
+                        toast('Purchase Product add SuccessFully!')
+                    }
+                    event.target.reset()
+                })
 
             } else {
                 toast(`must be purchase ${minimumQuantity} piece tool`)
