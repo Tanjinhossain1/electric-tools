@@ -6,14 +6,14 @@ import auth from '../../../firebase.init';
 // import auth from '../../../firebase.init';
 
 
-const ProfileForm = ({ children, profile }) => {
+const ProfileForm = ({ children, profile,refetch }) => {
     const [user] = useAuthState(auth)
     const addProfile = (event) => {
         event.preventDefault();
         const name = user?.displayName;
         const email = user?.email;
         const education = event.target.education.value;
-        const location = event.target.number.value;
+        const location = event.target.location.value;
         const number = event.target.number.value;
         const linkDin = event.target.linkDin.value;
         const profileDetail = { name, email, education, location, number, linkDin };
@@ -30,6 +30,7 @@ const ProfileForm = ({ children, profile }) => {
                     console.log(data)
                     toast.success('profile add compleat!')
                     event.target.reset()
+                    refetch()
                 })
         }
     }
