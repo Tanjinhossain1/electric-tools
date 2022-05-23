@@ -24,6 +24,8 @@ if(profile[0]){
     <div className='p-4 '>
         <div class="card w-96 bg-base-100 shadow-xl">
           <div class="card-body">
+            <p className='text-xl font-bold'>Name: {user?.displayName}</p>
+            <p className='text-xl font-bold'>Email: {user?.email}</p>
             <h2 class="card-title">Education: {education}</h2>
             <p className='text-xl'>Location: {location}</p>
             <p className='text-xl'>Number: {number}</p>

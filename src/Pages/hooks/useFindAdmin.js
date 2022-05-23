@@ -1,20 +1,27 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
-import auth from '../../firebase.init';
+import React, { useEffect, useState } from 'react';
 
-const useFindAdmin = () => {
-    const [user] = useAuthState(auth)
-    const { data: admin } = useQuery(['users'], () =>
-        fetch(`http://localhost:5000/findAdmin/${user?.email}`).then(res =>
-            res.json()
-        )
-    )
-    // if(isLoading){
-    //     return <Loading loading={isLoading} color={'#fc0377'}></Loading>
-    // }
-    console.log(admin)
-    return {admin}
+const useFindAdmin = (user) => {
+    const [admin, setAdmin] = useState({});
+    const [adminLoading, setAdminLoading] = useState(true)
+    useEffect(() => {
+        const email = user?.email;
+        if (email) {
+            fetch(`http://localhost:5000/findAdmin/${user?.email}`, {
+                method: 'GET',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+
+            }).then(res => res.json())
+                .then(data => {
+                   
+                    setAdmin(data.admin)
+                    setAdminLoading(false)
+                })
+        }
+    }, [user?.email]);
+    return [admin, adminLoading]
+
 };
 
 export default useFindAdmin;

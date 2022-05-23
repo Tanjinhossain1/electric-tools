@@ -9,13 +9,20 @@ const MakeAdmin = () => {
         res.json()
     )
 )
- 
+
 if(isLoading){
     return <Loading loading={isLoading} color={'#10e817'}></Loading>
 }
-if(!allUser){
-return <Loading loading={isLoading} color={'#10e817'}></Loading>
-}
+// console.log(allUser)
+// if(allUser){
+// console.log(allUser)
+//     return(
+//         <div>
+//          {allUser?.map(user=>console.log(user))}
+//      </div>
+//  )
+// }
+// console.log(allUser)
 if(allUser){
     return (
         <div>
@@ -24,17 +31,15 @@ if(allUser){
 
                     <thead>
                         <tr>
-                          
                             <th>Email</th>
                             <th>make admin</th>
-                            <th>DeleteUser</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            allUser.map(user=><User refetch={refetch} user={user} key={user._id}></User>)
+                           allUser&& allUser.map(user=><User refetch={refetch} user={user} key={user._id}></User>)
                         }
-                     
                     </tbody>
                 </table>
             </div>
