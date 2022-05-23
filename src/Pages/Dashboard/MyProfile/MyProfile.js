@@ -19,7 +19,9 @@ const MyProfile = () => {
 
 if(profile[0]){
   const { education, location, number, linkDin } = profile[0];
-  return <div className='grid lg:grid-cols-2'>
+  return <div>
+    <h1 className='text-xl font-bold text-blue-900'>Update Your Profile</h1>
+    <div className='grid lg:grid-cols-2'>
     <ProfileUpdateForm refetch={refetch} profile={profile}>Update Profile</ProfileUpdateForm>
     <div className='p-4 '>
         <div class="card w-96 bg-base-100 shadow-xl">
@@ -34,13 +36,17 @@ if(profile[0]){
         </div>
       </div>
   </div>
+  </div>
 }
   return (
-    <div className='grid lg:grid-cols-2'>
+   <div>
+     <h1 className='text-xl font-bold text-blue-900'>Add Your Profile </h1>
+      <div className='grid lg:grid-cols-2'>
       <div className='sm:space-y-reverse'>
           <ProfileForm profile={profile} refetch={refetch}>Add Profile</ProfileForm> 
       </div>
     </div>
+   </div>
   );
 };
 

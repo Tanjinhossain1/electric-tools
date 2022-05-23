@@ -15,29 +15,39 @@ import Payment from './Pages/Dashboard/Payment';
 import AddReview from './Pages/Home/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 import MakeAdmin from './Pages/Dashboard/MyProfile/Admin/MakeAdmin';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import useFindAdmin from './Pages/hooks/useFindAdmin';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
 
 function App() {
+  const user = useAuthState(auth)
+  const [admin] = useFindAdmin(user);
   return (
     <div>
-     <Navbar />
-     <Routes>
-       <Route path='/' element={<Home></Home>}></Route>
-       <Route path='/home' element={<Home />}></Route>
-       <Route path='/login' element={<Login />}></Route>
-       <Route path='/purchase/:id' element={<Purchase />}></Route>
-       <Route path='/signUp' element={<SignUp />}></Route>
-       <Route path='/dashboard' element={<Dashboard />}>
-       <Route index element={<MyOrders />}></Route>
-         {/* <Route path='myOrders' element={<MyOrders />}></Route> */}
-         <Route path='payment/:id' element={<Payment />}></Route>
-         <Route path='addReview' element={<AddReview />}></Route>
-         <Route path='myProfile' element={<MyProfile />}></Route>
-         <Route path='makeAdmin' element={<MakeAdmin />}></Route>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/purchase/:id' element={<Purchase />}></Route>
+        <Route path='/signUp' element={<SignUp />}></Route>
+        <Route path='/dashboard' element={<Dashboard />}>
+          {
+            admin ? <Route index element={<MyProfile />}></Route>
+            : <Route index element={<MyOrders />}></Route>
+          }
+           <Route path='makeAdmin' element={<MakeAdmin />}></Route> 
+          <Route path='payment/:id' element={<Payment />}></Route>
+          <Route path='addReview' element={<AddReview />}></Route>
+         
 
-       </Route>
-     </Routes>
-     <Footer />
-     <ToastContainer />
+          <Route path='addProduct' element={<AddProduct />}></Route>
+
+        </Route>
+      </Routes>
+      <Footer />
+      <ToastContainer />
     </div>
   );
 }

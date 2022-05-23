@@ -8,12 +8,11 @@ import Loading from '../Sheared/Loading';
 const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin, adminLoading] = useFindAdmin(user);
-    // const {role} = remaining;
-    console.log(admin)
+   
 
-    // if (adminLoading) {
-    //     return <Loading loading={adminLoading} color={'#10e8'}></Loading>
-    // }
+    if (adminLoading) {
+        return <Loading loading={adminLoading} color={'#10e8'}></Loading>
+    }
 
     return (
         <div>
@@ -30,8 +29,8 @@ const Dashboard = () => {
                         {admin ? <div>
                             <li><Link to='/dashboard/myProfile'>My Profile</Link></li>
                             <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li>
-                            <li><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
                             <li><Link to='/dashboard/addProduct'>Add A Product</Link></li>
+                            <li><Link to='/dashboard/manageOrders'>Manage All Orders</Link></li>
                             <li><Link to='/dashboard/manageProducts'>Manage Products</Link></li>
                         </div> :
                             <div>
