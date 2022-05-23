@@ -8,6 +8,7 @@ const DeleteModal = ({ children }) => {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <h3 className="font-bold text-red-400 text-2xl">Are You Sure You Want To Delete It.</h3>
+                   
                     <div className="modal-action">
                        {children}
                         <label for="deleteModal" className="btn">Cancel</label>

@@ -2,10 +2,11 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import DeleteModal from '../Dashboard/DeleteModal';
 import useFindAdmin from '../hooks/useFindAdmin';
 import Loading from '../Sheared/Loading';
 
-const Tool = ({ tool,children }) => {
+const Tool = ({ tool,children,deleteProduct,open }) => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth)
     const [admin, adminLoading] = useFindAdmin(user);
@@ -26,7 +27,7 @@ const Tool = ({ tool,children }) => {
                     <h1>availableQuantity: <span className='text-pink-600 font-bold'>{availableQuantity}</span></h1>
                 </div>
                 <h1><small>Description: {description}</small></h1>
-                {admin ?children:
+                {admin ?  children:
                 <button onClick={() => navigate(`/purchase/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
                 }
             </div>

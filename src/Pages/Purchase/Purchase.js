@@ -30,10 +30,11 @@ const Purchase = () => {
         const quantity = data.minimumQuantity;
         const address = data.address;
 
-        if (data.minimumQuantity > availableQuantity) {
+        if (+quantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
-        } else {
-            if (+minimumQuantity <= +data.minimumQuantity) {
+        } 
+        if(availableQuantity > +quantity){
+            if (minimumQuantity <= data.minimumQuantity) {
                 const newPrice = +data.minimumQuantity * price
                 fetch('http://localhost:5000/purchase', {
                     method: 'POST',
