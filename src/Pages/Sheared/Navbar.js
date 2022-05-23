@@ -14,6 +14,7 @@ const Navbar = () => {
         {user &&
             <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
         }
+            <li className='text-xl'><Link to='/blog'>Blog</Link></li>
         {user ? <li><button className='btn btn-ghost text-xl' onClick={() => logout()}>Log Out
             <div className="avatar">
                 <div className="w-5 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

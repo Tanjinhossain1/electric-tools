@@ -20,6 +20,7 @@ import useFindAdmin from './Pages/hooks/useFindAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
+import Blog from './Pages/Blog/Blog';
 
 function App() {
   const user = useAuthState(auth)
@@ -33,6 +34,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/purchase/:id' element={<Purchase />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
+        <Route path='/blog' element={<Blog />}></Route>
         <Route path='/dashboard' element={<Dashboard />}>
           {
             admin && <Route index element={<MyProfile />}></Route>
