@@ -33,8 +33,8 @@ const Purchase = () => {
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
-            if (minimumQuantity <= data.minimumQuantity) {
-                const newPrice = data.minimumQuantity * price
+            if (+minimumQuantity <= +data.minimumQuantity) {
+                const newPrice = +data.minimumQuantity * price
                 fetch('http://localhost:5000/purchase', {
                     method: 'POST',
                     headers: {
@@ -101,7 +101,7 @@ const Purchase = () => {
                     <span className="label-text">MinimumQuantity</span>
                 </label>
                 <input defaultValue={minimumQuantity} {...register("minimumQuantity")} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
-                <input className="btn btn-outline mt-2 w-full" type="submit" />
+                <input className="btn btn-outline mt-2 w-full" type="submit" value='Purchase' />
             </form>
         </div>
     );
