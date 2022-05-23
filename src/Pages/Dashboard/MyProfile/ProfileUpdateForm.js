@@ -8,7 +8,7 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
     const { _id } = profile[0];
     const updateProfile = (event) => {
         event.preventDefault();
-        
+
         const name = user?.displayName;
         const email = user?.email;
         const education = event.target.education.value;
@@ -19,21 +19,21 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
         const profileDetail = { name, email, education, location, number, linkDin };
         console.log(profileDetail)
         // if (profile.length < 1) {
-            console.log(_id)
-            fetch(`http://localhost:5000/profileUpdate/${_id}`, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(profileDetail)
+        console.log(_id)
+        fetch(`https://mighty-ridge-59560.herokuapp.com/profileUpdate/${_id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(profileDetail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                event.target.reset()
+                console.log(data)
+                toast.success('Profile Update SuccessFull!')
+                refetch()
             })
-                .then(res => res.json())
-                .then(data => {
-                    event.target.reset()
-                    console.log(data)
-                    toast.success('Profile Update SuccessFull!')
-                    refetch()
-                })
         // }
     }
     return (
@@ -56,7 +56,7 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
             </div>
             <div className='sm:w-2/4 md:w-2/4 lg:w-full w-2/4 mx-auto'>
                 {/* <input className='btn btn-outline  lg:w-2/4' type="submit" value={children} /> */}
-                <button  className='btn btn-outline'>
+                <button className='btn btn-outline'>
                     {children}
                 </button>
             </div>

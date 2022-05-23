@@ -4,48 +4,48 @@ import Loading from '../../../Sheared/Loading';
 import User from './User';
 
 const MakeAdmin = () => {
-    const { isLoading, data: allUser ,refetch} = useQuery('users', () =>
-    fetch(`http://localhost:5000/showAllUser`,).then(res =>
-        res.json()
+    const { isLoading, data: allUser, refetch } = useQuery('users', () =>
+        fetch(`https://mighty-ridge-59560.herokuapp.com/showAllUser`,).then(res =>
+            res.json()
+        )
     )
-)
 
-if(isLoading){
-    return <Loading loading={isLoading} color={'#10e817'}></Loading>
-}
-// console.log(allUser)
-// if(allUser){
-// console.log(allUser)
-//     return(
-//         <div>
-//          {allUser?.map(user=>console.log(user))}
-//      </div>
-//  )
-// }
-// console.log(allUser)
-if(allUser){
-    return (
-        <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+    if (isLoading) {
+        return <Loading loading={isLoading} color={'#10e817'}></Loading>
+    }
+    // console.log(allUser)
+    // if(allUser){
+    // console.log(allUser)
+    //     return(
+    //         <div>
+    //          {allUser?.map(user=>console.log(user))}
+    //      </div>
+    //  )
+    // }
+    // console.log(allUser)
+    if (allUser) {
+        return (
+            <div>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
 
-                    <thead>
-                        <tr>
-                            <th>Email</th>
-                            <th>make admin</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                           allUser&& allUser.map(user=><User refetch={refetch} user={user} key={user._id}></User>)
-                        }
-                    </tbody>
-                </table>
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>make admin</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                allUser && allUser.map(user => <User refetch={refetch} user={user} key={user._id}></User>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    );
-}
+        );
+    }
 };
 
 export default MakeAdmin;

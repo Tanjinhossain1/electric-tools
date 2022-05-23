@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const imgKey = 'dd6aa9e917ed30c4f9f495bf1f8866ee';
 
-    const onSubmit = (data,event) => {
+    const onSubmit = (data, event) => {
         console.log(data)
         const { name, description, availableQuantity, minimumQuantity, price } = data;
         const image = data.img[0];
@@ -24,7 +24,7 @@ const AddProduct = () => {
                     const productDetail = { name, description, availableQuantity, minimumQuantity, price, img }
                     if (+minimumQuantity > 0 && +availableQuantity > 0 && +price > 0) {
                         if (+minimumQuantity < +availableQuantity) {
-                            fetch('http://localhost:5000/addProduct', {
+                            fetch('https://mighty-ridge-59560.herokuapp.com/addProduct', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'

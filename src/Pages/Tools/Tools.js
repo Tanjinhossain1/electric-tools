@@ -5,7 +5,7 @@ import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, data: tools } = useQuery('tools', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch('https://mighty-ridge-59560.herokuapp.com/tools').then(res =>
             res.json()
         )
     )
@@ -23,7 +23,7 @@ const Tools = () => {
                     }
                 </div>
             </div>
-     
+
         </div>
     );
 };
