@@ -13,11 +13,11 @@ const Payment = () => {
             res.json()
         )
     )
-    if(!order){
+    if (!order) {
         return <Loading loading={!order} color={'#b51b7d'}></Loading>
     }
     const { img, newPrice, quantity, toolName } = order[0];
-   
+
     const stripePromise = loadStripe('pk_test_51L0j3OFuLz5Y1W90JfJ4aPsQk26Sw18FKES7T70zrdNvsBho1uGq5Awnm5STU8LrSZCkMTPfN0bRAvV6Mq1fIfAD007cwlDQ8L');
     if (isLoading) {
         return <Loading loading={isLoading} color={'#b51b7d'}></Loading>
@@ -34,7 +34,7 @@ const Payment = () => {
             </div>
             <div className='card-body rounded-lg shadow-2xl lg:w-2/4 mx-auto mt-12'>
                 <Elements stripe={stripePromise}>
-                    <CheckoutForm order={order}/>
+                    <CheckoutForm order={order} />
                 </Elements>
             </div>
         </div>

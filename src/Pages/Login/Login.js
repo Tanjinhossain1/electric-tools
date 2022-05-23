@@ -13,23 +13,23 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        signInWithEmailAndPassword(data.email,data.password)
+        signInWithEmailAndPassword(data.email, data.password)
     };
-   
+
     return (
         <div>
-            <div class="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
-                <div class=" flex-col lg:flex-row-reverse">
-                    <div class="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit(onSubmit)} class="card-body">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
+            <div className="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
+                <div className=" flex-col lg:flex-row-reverse">
+                    <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
                                 </label>
                                 <input className="input input-bordered w-full max-w-xs"
                                     placeholder='Email'
@@ -49,9 +49,9 @@ const Login = () => {
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Password</span>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
                                 </label>
                                 <input className="input input-bordered w-full max-w-xs"
                                     placeholder='Password'
@@ -71,17 +71,17 @@ const Login = () => {
 
 
 
-                                <label label class="label" >
-                                    <p class="label-text-alt link link-hover">Forgot password?</p>
+                                <label label className="label" >
+                                    <p className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
                             </div>
-                            <div class="form-control mt-6">
-                                <button class="btn btn-primary">Login</button>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-primary">Login</button>
                             </div>
                             <p><small>Don't Have an Account? <Link className='text-purple-600 font-bold' to='/signUp'>Create Account</Link></small></p>
                         </form>
-                        <div class="divider">OR</div>
-                        <button onClick={()=>signInWithGoogle()} class="btn btn-outline">Continue With Google</button>
+                        <div className="divider">OR</div>
+                        <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
                     </div>
                 </div>
             </div >

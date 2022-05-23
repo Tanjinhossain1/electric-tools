@@ -36,8 +36,8 @@ const BusinessSummary = () => {
                         <p className='text-xl text-blue-900'>Don't hesitated to Contact us</p>
                     </div>
                     <div className='flex '>
-                        <button class="btn mr-4 rounded-lg bg-[#1bb0b3] border-0 btn-xs sm:btn-sm md:btn-md lg:btn-md">Request For Quote</button>
-                        <button class="btn  rounded-lg bg-blue-900 btn-xs border-0 sm:btn-sm md:btn-md lg:btn-md">Contact Us</button>
+                        <button className="btn mr-4 rounded-lg bg-[#1bb0b3] border-0 btn-xs sm:btn-sm md:btn-md lg:btn-md">Request For Quote</button>
+                        <button className="btn  rounded-lg bg-blue-900 btn-xs border-0 sm:btn-sm md:btn-md lg:btn-md">Contact Us</button>
                     </div>
                 </div>
             </div>

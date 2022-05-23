@@ -17,23 +17,23 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
-                   
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Payment</th>
-                            <th>Action</th>
+                            <th>Cancel</th>
                         </tr>
                     </thead>
-                    <tbody>   
+                    <tbody>
                         {
-                            orders.map(order=><Order key={order._id} refetch={refetch} order={order}></Order>)
+                            orders.map(order => <Order key={order._id} refetch={refetch} order={order}></Order>)
                         }
-                     
+
                     </tbody>
                 </table>
             </div>

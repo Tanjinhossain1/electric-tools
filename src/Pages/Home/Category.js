@@ -40,7 +40,7 @@ const Category = () => {
                     <p className='text-xl'>Suggestion offer work some day</p>
                 </div>
                 <div>
-                    <button class="btn btn-outline">Explore Me</button>
+                    <button className="btn btn-outline">Explore Me</button>
                 </div>
             </div>
         </div>

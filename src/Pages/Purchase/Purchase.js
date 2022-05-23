@@ -19,37 +19,37 @@ const Purchase = () => {
     if (isLoading) {
         return <Loading loading={isLoading} color={'#be03fc'}></Loading>
     }
-    const { name: toolName, price, minimumQuantity,img, availableQuantity } = tool;
+    const { name: toolName, price, minimumQuantity, img, availableQuantity } = tool;
 
 
-    const onSubmit = (data,event) => {
+    const onSubmit = (data, event) => {
         console.log(data)
         const email = user?.email;
         const name = user?.displayName;
         const number = data.number;
         const quantity = data.minimumQuantity;
         const address = data.address;
-      
+
         if (data.minimumQuantity > availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         } else {
             if (minimumQuantity <= data.minimumQuantity) {
                 const newPrice = data.minimumQuantity * price
-                fetch('http://localhost:5000/purchase',{
+                fetch('http://localhost:5000/purchase', {
                     method: 'POST',
-                    headers:{
-                        'content-type':'application/json'
+                    headers: {
+                        'content-type': 'application/json'
                     },
-                    body: JSON.stringify({email,name,number,quantity,address,newPrice,toolName,img}) 
+                    body: JSON.stringify({ email, name, number, quantity, address, newPrice, toolName, img })
                 })
-                .then(res=>res.json())
-                .then(result =>{
-                    console.log(result)
-                    if(result.acknowledged){
-                        toast.success('Purchase Product add SuccessFully!')
-                    }
-                    event.target.reset()
-                })
+                    .then(res => res.json())
+                    .then(result => {
+                        console.log(result)
+                        if (result.acknowledged) {
+                            toast.success('Purchase Product add SuccessFully!')
+                        }
+                        event.target.reset()
+                    })
 
             } else {
                 toast.error(`must be purchase ${minimumQuantity} piece tool`)
@@ -59,18 +59,18 @@ const Purchase = () => {
     return (
         <div className='w-4/4 md:w-2/4 my-20 lg:w-1/4 mx-auto p-2'>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label class="label">
-                    <span class="label-text">Name</span>
+                <label className="label">
+                    <span className="label-text">Name</span>
                 </label>
-                <input defaultValue={user?.displayName} {...register("name")} type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs " readOnly disabled />
-               
-                <label class="label mt-2">
-                    <span class="label-text">Email</span>
-                </label>
-                <input defaultValue={user?.email} {...register("email")} type="text" placeholder="Type here" class="input input-bordered  input-primary w-full max-w-xs" readOnly disabled />
+                <input defaultValue={user?.displayName} {...register("name")} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs " readOnly disabled />
 
-                <label class="label">
-                    <span class="label-text">Number</span>
+                <label className="label mt-2">
+                    <span className="label-text">Email</span>
+                </label>
+                <input defaultValue={user?.email} {...register("email")} type="text" placeholder="Type here" className="input input-bordered  input-primary w-full max-w-xs" readOnly disabled />
+
+                <label className="label">
+                    <span className="label-text">Number</span>
                 </label>
                 <input className="input input-bordered w-full max-w-xs"
                     placeholder='Your Number'
@@ -87,21 +87,21 @@ const Purchase = () => {
                     })} />
                 {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
                 {errors.number?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
-                <label class="label mt-2">
-                    <span class="label-text">Address</span>
+                <label className="label mt-2">
+                    <span className="label-text">Address</span>
                 </label>
                 <input {...register("address", {
                     required: {
                         value: true,
                         message: 'Address is Required'
                     },
-                })} type="text" placeholder="Your Address" class="input input-bordered   w-full max-w-xs" />
+                })} type="text" placeholder="Your Address" className="input input-bordered   w-full max-w-xs" />
                 {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address.message}</span>}
-                <label class="label">
-                    <span class="label-text">MinimumQuantity</span>
+                <label className="label">
+                    <span className="label-text">MinimumQuantity</span>
                 </label>
-                <input defaultValue={minimumQuantity} {...register("minimumQuantity")} type="text" placeholder="Add Quantity" class="input input-bordered  w-full max-w-xs " />
-                <input class="btn btn-outline mt-2 w-full" type="submit" />
+                <input defaultValue={minimumQuantity} {...register("minimumQuantity")} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
+                <input className="btn btn-outline mt-2 w-full" type="submit" />
             </form>
         </div>
     );

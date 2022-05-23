@@ -15,7 +15,7 @@ const Tool = ({ tool }) => {
                     <h1>availableQuantity: <span className='text-pink-600 font-bold'>{availableQuantity}</span></h1>
                 </div>
                 <h1><small>Description: {description}</small></h1>
-                <button onClick={() => navigate(`/purchase/${_id}`)} class="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
+                <button onClick={() => navigate(`/purchase/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
 
 
             </div>
