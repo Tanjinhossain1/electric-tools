@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import useAllUser from '../hooks/useAllUser';
+import Loading from '../Sheared/Loading';
 
 const Login = () => {
 
@@ -14,8 +16,12 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
-
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [token] = useAllUser(user || googleUser)
+    console.log(token)
+     if (loading  || GoogleLoading) {
+        return <Loading loading={loading  || GoogleLoading} color={'#081663'}></Loading>
+    }
     const onSubmit = data => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
@@ -73,6 +79,9 @@ const Login = () => {
 
                                 <label label className="label" >
                                     <p className="label-text-alt link link-hover">Forgot password?</p>
+                                </label>
+                                <label label className="label" >
+                                    <p className="label-text-alt link link-hover">{error&&<small>{error?.message}</small>}</p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
