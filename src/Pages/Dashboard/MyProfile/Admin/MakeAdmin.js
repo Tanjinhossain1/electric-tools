@@ -13,6 +13,10 @@ const MakeAdmin = () => {
 if(isLoading){
     return <Loading loading={isLoading} color={'#10e817'}></Loading>
 }
+if(!allUser){
+return <Loading loading={isLoading} color={'#10e817'}></Loading>
+}
+if(allUser){
     return (
         <div>
             <div class="overflow-x-auto">
@@ -36,6 +40,7 @@ if(isLoading){
             </div>
         </div>
     );
+}
 };
 
 export default MakeAdmin;

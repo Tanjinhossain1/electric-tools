@@ -1,17 +1,10 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 import { Link, Outlet } from 'react-router-dom';
-import Loading from '../Sheared/Loading';
+import useFindAdmin from '../hooks/useFindAdmin';
 
 const Dashboard = () => {
-    const { isLoading, data: admin } = useQuery('users', () =>
-    fetch(`http://localhost:5000/findAdmin?email=tanjinhossain2003@gmail.com`,).then(res =>
-        res.json()
-    )
-)
-if(isLoading){
-    return <Loading loading={isLoading} color={'#fc0377'}></Loading>
-}
+    const { admin } = useFindAdmin();
+    console.log(admin)
     return (
         <div>
             <div className="drawer drawer-mobile">
@@ -24,12 +17,16 @@ if(isLoading){
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
 
-                        <li><Link to='/dashboard'>My Orders</Link></li>
-                        <li><Link to='/dashboard/addReview'>Add A Review</Link></li>
-                        <li><Link to='/dashboard/myProfile'>My Profile</Link></li>
-                        
-                        <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li>
-                    
+
+                        {admin.admin ?
+                            <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li> :
+                            <div>
+                                <li><Link to='/dashboard'>My Orders</Link></li>
+                                <li><Link to='/dashboard/addReview'>Add A Review</Link></li>
+                                <li><Link to='/dashboard/myProfile'>My Profile</Link></li>
+                            </div>
+                        }
+
                     </ul>
 
                 </div>
