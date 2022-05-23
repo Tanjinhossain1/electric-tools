@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import Loading from '../Sheared/Loading';
 import Tool from '../Tools/Tool';
 import DeleteModal from './DeleteModal';
@@ -16,7 +17,7 @@ const ManageProduct = () => {
     }
     const deleteProduct = (id) => {
         // console.log('clicked',id)
-        fetch(`http://localhost:5000/deletePurchaseol/${id}`, {
+        fetch(`http://localhost:5000/deleteProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -24,6 +25,7 @@ const ManageProduct = () => {
                 console.log(data);
                 refetch()
                 setOpen(false)
+                toast.warn('Product Delete Success Fully!!')
             })
     }
 
