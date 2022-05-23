@@ -19,7 +19,7 @@ const Tools = () => {
                 <h1 className='text-3xl font-bold text-gray-600 mb-2'>Tools:</h1>
                 <div className='grid lg:grid-cols-2 '>
                     {
-                        tools.map((tool, index) => <Tool key={index} tool={tool}></Tool>)
+                        tools.map((tool, index) => <Tool key={index} tool={tool}> <button className="btn mt-2 btn-outline w-full ease-in-out duration-500">Update</button></Tool>)
                     }
                 </div>
             </div>

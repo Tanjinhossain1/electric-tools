@@ -19,6 +19,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import useFindAdmin from './Pages/hooks/useFindAdmin';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
+import ManageProduct from './Pages/Dashboard/ManageProduct';
 
 function App() {
   const user = useAuthState(auth)
@@ -34,14 +35,16 @@ function App() {
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/dashboard' element={<Dashboard />}>
           {
-            admin ? <Route index element={<MyProfile />}></Route>
-            : <Route index element={<MyOrders />}></Route>
+            admin && <Route index element={<MyProfile />}></Route>
           }
+          {
+            !admin&&<Route index element={<MyProfile />}></Route>
+          }
+          <Route path='myOrders' element={<MyOrders />}></Route>
            <Route path='makeAdmin' element={<MakeAdmin />}></Route> 
           <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
-         
-
+          <Route path='manageProducts' element={<ManageProduct />}></Route>
           <Route path='addProduct' element={<AddProduct />}></Route>
 
         </Route>

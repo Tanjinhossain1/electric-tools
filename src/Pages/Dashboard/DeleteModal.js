@@ -1,20 +1,15 @@
 import React from 'react';
 
-const DeleteModal = ({ deleteOrder, order }) => {
-    const { _id } = order;
+const DeleteModal = ({ children }) => {
+
     return (
         <div>
-
-
-
             <input type="checkbox" id="deleteModal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg">Congratulations random Interner user!</h3>
-                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                    <h3 className="font-bold text-red-400 text-2xl">Are You Sure You Want To Delete It.</h3>
                     <div className="modal-action">
-                        <button onClick={() => deleteOrder(_id)} className="btn btn-outline">Confirm Delete</button>
-
+                       {children}
                         <label for="deleteModal" className="btn">Cancel</label>
                     </div>
                 </div>

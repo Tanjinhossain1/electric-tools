@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import useFindAdmin from '../hooks/useFindAdmin';
 import Loading from '../Sheared/Loading';
 
-const Tool = ({ tool }) => {
+const Tool = ({ tool,children }) => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth)
     const [admin, adminLoading] = useFindAdmin(user);
@@ -26,7 +26,7 @@ const Tool = ({ tool }) => {
                     <h1>availableQuantity: <span className='text-pink-600 font-bold'>{availableQuantity}</span></h1>
                 </div>
                 <h1><small>Description: {description}</small></h1>
-                {admin ? <button className="btn mt-2 btn-outline w-full ease-in-out duration-500">Update</button>:
+                {admin ?children:
                 <button onClick={() => navigate(`/purchase/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
                 }
             </div>
