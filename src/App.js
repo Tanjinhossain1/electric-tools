@@ -22,6 +22,7 @@ import auth from './firebase.init';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Blog from './Pages/Blog/Blog';
 import MyPortfolio from './Pages/MyProtfolio/MyPortfolio';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   const user = useAuthState(auth)
@@ -52,6 +53,7 @@ function App() {
           <Route path='addProduct' element={<AddProduct />}></Route>
 
         </Route>
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

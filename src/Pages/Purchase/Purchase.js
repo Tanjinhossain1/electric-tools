@@ -101,9 +101,9 @@ const Purchase = () => {
                 <label className="label">
                     <span className="label-text">MinimumQuantity</span>
                 </label>
-                <input onBlur={(e) => setQuantity(e.target.value)} defaultValue={minimumQuantity} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
+                <input onChange={(e) => setQuantity(e.target.value)} defaultValue={minimumQuantity} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
 
-                <input disabled={minimumQuantity > quantity || availableQuantity < +quantity} className="btn btn-outline mt-2 w-full" type="submit" value='Purchase' />
+                <input disabled={minimumQuantity > +quantity || availableQuantity < +quantity} className="btn btn-outline mt-2 w-full" type="submit" value='Purchase' />
             </form>
         </div>
     );
