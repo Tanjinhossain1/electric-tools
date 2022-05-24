@@ -1,30 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import useAllUser from '../hooks/useAllUser';
 import Loading from '../Sheared/Loading';
+import { async } from '@firebase/util';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const [email, setEmail] = useState('')
 
-
-    const [signInWithGoogle, googleUser, GoogleLoading] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, GoogleLoading, googleError] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, sendPasswordError] = useSendPasswordResetEmail(auth);
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [token] = useAllUser(user || googleUser)
     console.log(token)
-     if (loading  || GoogleLoading) {
-        return <Loading loading={loading  || GoogleLoading} color={'#081663'}></Loading>
+    if (loading || GoogleLoading || sending) {
+        return <Loading loading={loading || GoogleLoading || sending} color={'#081663'}></Loading>
     }
-    const onSubmit = data => {
+    const onSubmit =  (data) => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
+        setEmail(data.email)
+       
     };
 
     return (
@@ -78,10 +85,16 @@ const Login = () => {
 
 
                                 <label label className="label" >
-                                    <p className="label-text-alt link link-hover">Forgot password?</p>
+                                    <p onClick={async()=>{
+                                         await sendPasswordResetEmail(email)
+                                         toast('send reset password on your email')
+                                    }} className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
                                 <label label className="label" >
-                                    <p className="label-text-alt link link-hover">{error&&<small>{error?.message}</small>}</p>
+                                    <p className="label-text-alt link link-hover">{error && <span className='text-red-600'>{error?.message}</span>}</p>
+                                </label>
+                                <label label className="label" >
+                                    <p className="label-text-alt link link-hover">{googleError && <span className='text-red-600'>{googleError?.message}</span>}</p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
