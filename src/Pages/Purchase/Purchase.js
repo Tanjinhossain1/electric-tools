@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
@@ -10,6 +10,7 @@ import Loading from '../Sheared/Loading';
 const Purchase = () => {
     const { id } = useParams();
     const [user] = useAuthState(auth);
+    const [quantity, setQuantity] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { isLoading, data: tool } = useQuery(['tool'], () =>
         fetch(`http://localhost:5000/tools/${id}`).then(res =>
@@ -20,14 +21,13 @@ const Purchase = () => {
         return <Loading loading={isLoading} color={'#be03fc'}></Loading>
     }
     const { name: toolName, price, minimumQuantity, img, availableQuantity } = tool;
-
-
+    console.log(quantity)
     const onSubmit = (data, event) => {
         console.log(data)
         const email = user?.email;
         const name = user?.displayName;
         const number = data.number;
-        const quantity = data.minimumQuantity;
+        // const quantity = data.minimumQuantity;
         const address = data.address;
 
         if (+quantity > availableQuantity) {
@@ -101,8 +101,9 @@ const Purchase = () => {
                 <label className="label">
                     <span className="label-text">MinimumQuantity</span>
                 </label>
-                <input defaultValue={minimumQuantity} {...register("minimumQuantity")} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
-                <input className="btn btn-outline mt-2 w-full" type="submit" value='Purchase' />
+                <input onBlur={(e) => setQuantity(e.target.value)} defaultValue={minimumQuantity} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
+
+                <input disabled={minimumQuantity > quantity || availableQuantity < +quantity} className="btn btn-outline mt-2 w-full" type="submit" value='Purchase' />
             </form>
         </div>
     );

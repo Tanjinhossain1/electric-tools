@@ -1,10 +1,14 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useFindAdmin from '../hooks/useFindAdmin';
 
 
 const Tool = ({ tool }) => {
     const navigate = useNavigate();
-
+    const [user] = useAuthState(auth)
+    const [admin] = useFindAdmin(user)
 
     const { name, description, price, img, minimumQuantity, availableQuantity, _id } = tool;
     return (
@@ -18,8 +22,10 @@ const Tool = ({ tool }) => {
                     <h1>availableQuantity: <span className='text-pink-600 font-bold'>{availableQuantity}</span></h1>
                 </div>
                 <h1><small>Description: {description}</small></h1>
-               
+               {
+                user && admin ? <button className="btn mt-2 btn-outline w-full ease-in-out duration-500">Update</button>:
                 <button onClick={() => navigate(`/purchase/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
+               }
             </div>
         </div>
     );

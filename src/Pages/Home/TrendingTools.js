@@ -14,7 +14,7 @@ const TrendingTools = () => {
                     <p>Electric Drill</p>
                 </div>
                 <div className='m-4'>
-                    <img className='border' src="https://ae01.alicdn.com/kf/Sf06cdeb2b2f1471599f405c3483c2827Z.jpg" alt="" />
+                    <img className='border' src="https://static-01.daraz.com.bd/p/dbcb3f8c9fdb5d1bccb2fb0e06b37d85.jpg" alt="" />
                     <p>Soldering Iron</p>
                 </div>
                 <div className='m-4'>

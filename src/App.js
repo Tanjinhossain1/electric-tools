@@ -36,8 +36,8 @@ function App() {
         <Route path='/purchase/:id' element={<Purchase />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/blog' element={<Blog />}></Route>
-        <Route path='/myPortfolio' element={<MyPortfolio />}>
+        <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
+        <Route path='/dashboard' element={<Dashboard />}>
           {
             admin && <Route index element={<MyProfile />}></Route>
           }
