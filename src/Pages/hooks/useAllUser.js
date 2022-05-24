@@ -15,8 +15,9 @@ const useAllUser = (user) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('update user', data)
-                    setToken(data)
+                    console.log('update user', data.token)
+                    localStorage.setItem('accessToken',data.token)
+                    setToken(data.token)
                 })
         }
     }, [user])

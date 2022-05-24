@@ -19,24 +19,22 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending, sendPasswordError] = useSendPasswordResetEmail(auth);
-
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [token] = useAllUser(user || googleUser)
+    const [token] = useAllUser(googleUser || user)
     console.log(token)
     if (loading || GoogleLoading || sending) {
         return <Loading loading={loading || GoogleLoading || sending} color={'#081663'}></Loading>
     }
-    const onSubmit =  (data) => {
+    const onSubmit = (data) => {
         console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
         setEmail(data.email)
-       
     };
 
     return (
         <div>
-            <div className="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
+            <div className="w-3/4 md:w-3/4 lg:w-2/4 xl:w-1/4 mx-auto my-24">
                 <div className=" flex-col lg:flex-row-reverse">
                     <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -85,9 +83,9 @@ const Login = () => {
 
 
                                 <label label className="label" >
-                                    <p onClick={async()=>{
-                                         await sendPasswordResetEmail(email)
-                                         toast('send reset password on your email')
+                                    <p onClick={async () => {
+                                        await sendPasswordResetEmail(email)
+                                        toast('send reset password on your email')
                                     }} className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
                                 <label label className="label" >
@@ -97,8 +95,8 @@ const Login = () => {
                                     <p className="label-text-alt link link-hover">{googleError && <span className='text-red-600'>{googleError?.message}</span>}</p>
                                 </label>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                            <div className="form-control  ">
+                                <button className="btn btn-primary sm:w-3/4">Login</button>
                             </div>
                             <p><small>Don't Have an Account? <Link className='text-purple-600 font-bold' to='/signUp'>Create Account</Link></small></p>
                         </form>

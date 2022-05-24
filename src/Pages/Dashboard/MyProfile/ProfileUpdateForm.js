@@ -1,11 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const ProfileUpdateForm = ({ children, profile, refetch }) => {
     const [user] = useAuthState(auth)
     const { _id } = profile[0];
+    const navigate = useNavigate()
     const updateProfile = (event) => {
         event.preventDefault();
 

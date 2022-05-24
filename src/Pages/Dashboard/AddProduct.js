@@ -1,10 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const imgKey = 'dd6aa9e917ed30c4f9f495bf1f8866ee';
+    const navigate = useNavigate()
 
     const onSubmit = (data, event) => {
         console.log(data)
@@ -22,25 +26,40 @@ const AddProduct = () => {
                 if (result.success) {
                     const img = result.data.url;
                     const productDetail = { name, description, availableQuantity, minimumQuantity, price, img }
-                    if (+minimumQuantity > 0 && +availableQuantity > 0 && +price > 0) {
-                        if (+minimumQuantity < +availableQuantity) {
-                            fetch('http://localhost:5000/addProduct', {
-                                method: 'POST',
-                                headers: {
-                                    'content-type': 'application/json'
-                                },
-                                body: JSON.stringify(productDetail)
-                            })
-                                .then(res => res.json())
-                                .then(data => {
-                                    console.log(data)
-                                    if (data) {
-                                        toast.success('Product Add SuccessFully!')
-                                        event.target.reset()
-                                    }
+                    if (+minimumQuantity > 0 && +availableQuantity > 0) {
+                        if (+price > 0) {
+                            if (+minimumQuantity < +availableQuantity) {
+                                fetch('http://localhost:5000/addProduct', {
+                                    method: 'POST',
+                                    headers: {
+                                        'content-type': 'application/json',
+                                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                                    },
+                                    body: JSON.stringify(productDetail)
                                 })
+                                    .then(res => {
+                                        if (res.status === 401 || res.status === 403) {
+                                            signOut(auth)
+                                            navigate('/home')
+                                            toast.error('You Are not a Valid user Login again')
+                                        }
+                                        return res.json()
+
+                                    })
+                                    .then(data => {
+                                        console.log(data)
+                                        if (data.insertedId) {
+                                            toast.success('Product Add SuccessFully!')
+                                            event.target.reset()
+                                        }else{
+                                            toast.error('Fail To Add Product')
+                                        }
+                                    })
+                            } else {
+                                toast.error('Increase Your Available Quantity!')
+                            }
                         } else {
-                            toast.error('Increase Your Available Quantity!')
+                            toast.error('Type valid Price')
                         }
                     } else {
                         toast.error('Type valid Quantity')
@@ -75,7 +94,7 @@ const AddProduct = () => {
                         <label class="label">
                             <span class="label-text">AvailableQuantity</span>
                         </label>
-                        <input type="text" {...register("availableQuantity", { required: true })} placeholder="AvailableQuantity" class="input input-bordered w-full max-w-xs" required />
+                        <input type="number" {...register("availableQuantity", { required: true })} placeholder="AvailableQuantity" class="input input-bordered w-full max-w-xs" required />
                     </div>
                     <div class="form-control w-full max-w-xs mt-2">
                         <label class="label">

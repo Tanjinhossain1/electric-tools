@@ -1,6 +1,6 @@
 import { async } from '@firebase/util';
 import React from 'react';
-import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -16,18 +16,20 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const [signInWithGoogle, googleUser, GoogleLoading] = useSignInWithGoogle(auth);
     const [token] = useAllUser(user || googleUser)
     console.log(token)
     const [updateProfile, updating] = useUpdateProfile(auth);
 
-    if (loading || updating || GoogleLoading) {
+    if (loading || updating || GoogleLoading || sending) {
         return <Loading loading={loading || updating || GoogleLoading} color={'#081663'}></Loading>
     }
     const onSubmit = async (data, event) => {
         console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name });
+        await sendEmailVerification()
         event.target.reset();
 
     };
