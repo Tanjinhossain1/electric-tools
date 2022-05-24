@@ -9,7 +9,7 @@ const Order = ({ order, refetch }) => {
     const [open, setOpen] = useState(false)
     const deleteOrder = (id) => {
         if (!paid) {
-            fetch(`https://mighty-ridge-59560.herokuapp.com/deletePurchaseTool/${id}`, {
+            fetch(`http://localhost:5000/deletePurchaseTool/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

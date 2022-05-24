@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
         const { newPrice } = order[0];
         console.log(newPrice)
         if (newPrice) {
-            fetch(`https://mighty-ridge-59560.herokuapp.com/create-payment`, {
+            fetch(`http://localhost:5000/create-payment`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -74,7 +74,7 @@ const CheckoutForm = ({ order }) => {
         }
         if (paymentIntent) {
             setLoading(false)
-            fetch(`https://mighty-ridge-59560.herokuapp.com/purchase/${_id}`, {
+            fetch(`http://localhost:5000/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

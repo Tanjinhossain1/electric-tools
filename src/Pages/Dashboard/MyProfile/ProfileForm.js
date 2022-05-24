@@ -18,7 +18,7 @@ const ProfileForm = ({ children, profile, refetch }) => {
         const linkDin = event.target.linkDin.value;
         const profileDetail = { name, email, education, location, number, linkDin };
         if (profile.length < 1) {
-            fetch('https://mighty-ridge-59560.herokuapp.com/addProfile', {
+            fetch('http://localhost:5000/addProfile', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

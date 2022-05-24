@@ -7,7 +7,7 @@ import ManageTool from './ManageTool';
 const ManageProduct = () => {
 
     const { isLoading, data: tools, refetch } = useQuery('tools', () =>
-        fetch('https://mighty-ridge-59560.herokuapp.com/tools').then(res =>
+        fetch('http://localhost:5000/tools').then(res =>
             res.json()
         )
     )
@@ -26,7 +26,7 @@ const ManageProduct = () => {
                 }
 
             </div>
-            {/* <DeleteModal tool={tool}> <button onClick={()=>deleteProduct(tool._id)}  className="btn btn-outline bg-red-500 border-0">Confirm Delete</button></DeleteModal> */}
+
         </div>
     );
 };

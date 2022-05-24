@@ -12,7 +12,7 @@ const Purchase = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { isLoading, data: tool } = useQuery(['tool'], () =>
-        fetch(`https://mighty-ridge-59560.herokuapp.com/tools/${id}`).then(res =>
+        fetch(`http://localhost:5000/tools/${id}`).then(res =>
             res.json()
         )
     )
@@ -36,7 +36,7 @@ const Purchase = () => {
         if (availableQuantity > +quantity) {
             if (minimumQuantity <= data.minimumQuantity) {
                 const newPrice = +data.minimumQuantity * price
-                fetch('https://mighty-ridge-59560.herokuapp.com/purchase', {
+                fetch('http://localhost:5000/purchase', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

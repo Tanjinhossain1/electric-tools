@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const Payment = () => {
     const { id } = useParams();
     const { isLoading, data: order } = useQuery('tools', () =>
-        fetch(`https://mighty-ridge-59560.herokuapp.com/orders/${id}`,).then(res =>
+        fetch(`http://localhost:5000/orders/${id}`,).then(res =>
             res.json()
         )
     )

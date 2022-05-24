@@ -6,7 +6,7 @@ const useAllUser = (user) => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://mighty-ridge-59560.herokuapp.com/allUser/${email}`, {
+            fetch(`http://localhost:5000/allUser/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

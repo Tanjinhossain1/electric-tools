@@ -24,7 +24,7 @@ const AddProduct = () => {
                     const productDetail = { name, description, availableQuantity, minimumQuantity, price, img }
                     if (+minimumQuantity > 0 && +availableQuantity > 0 && +price > 0) {
                         if (+minimumQuantity < +availableQuantity) {
-                            fetch('https://mighty-ridge-59560.herokuapp.com/addProduct', {
+                            fetch('http://localhost:5000/addProduct', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'

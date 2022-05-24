@@ -8,7 +8,7 @@ import Order from './Order';
 const MyOrders = () => {
     const [user] = useAuthState(auth)
     const { isLoading, data: orders, refetch } = useQuery('tools', () =>
-        fetch(`https://mighty-ridge-59560.herokuapp.com/orders?email=${user?.email}`,).then(res =>
+        fetch(`http://localhost:5000/orders?email=${user?.email}`,).then(res =>
             res.json()
         )
     )

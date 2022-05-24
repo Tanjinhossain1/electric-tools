@@ -6,7 +6,7 @@ const useFindAdmin = (user) => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://mighty-ridge-59560.herokuapp.com/findAdmin/${user?.email}`, {
+            fetch(`http://localhost:5000/findAdmin/${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'content-Type': 'application/json'
