@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAllUser from '../hooks/useAllUser';
 import Loading from '../Sheared/Loading';
 import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const [email, setEmail] = useState('')
-
+    const [email, setEmail] = useState('');
     const [signInWithGoogle, googleUser, GoogleLoading, googleError] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
@@ -18,6 +17,13 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const location = useLocation();
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
+    if(user||googleUser){
+        navigate(from, { replace: true });
+    }
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -38,7 +44,7 @@ const Login = () => {
                 <div className=" flex-col lg:flex-row-reverse">
                     <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
@@ -60,7 +66,7 @@ const Login = () => {
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
@@ -96,7 +102,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control  ">
-                                <button className="btn btn-primary sm:w-3/4 lg:w-4/4 mx-auto">Login</button>
+                                <button className="btn btn-primary sm:w-2/4 w-3/4 md:w-2/4  lg:w-2/4 xl:w-4/4 mx-auto">Login</button>
                             </div>
                             <p><small>Don't Have an Account? <Link className='text-purple-600 font-bold' to='/signUp'>Create Account</Link></small></p>
                         </form>

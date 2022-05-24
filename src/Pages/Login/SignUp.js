@@ -2,7 +2,7 @@ import { async } from '@firebase/util';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useAllUser from '../hooks/useAllUser';
 import Loading from '../Sheared/Loading';
@@ -16,11 +16,22 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
     const [signInWithGoogle, googleUser, GoogleLoading] = useSignInWithGoogle(auth);
+
+    const location = useLocation();
+    const navigate = useNavigate()
+    let from = location.state?.from?.pathname || "/";
+    if (user || googleUser ) {
+        navigate(from, { replace: true });
+    }
+
+    const [sendEmailVerification, sending] = useSendEmailVerification(auth);
+
     const [token] = useAllUser(user || googleUser)
     console.log(token)
     const [updateProfile, updating] = useUpdateProfile(auth);
+
+ 
 
     if (loading || updating || GoogleLoading || sending) {
         return <Loading loading={loading || updating || GoogleLoading} color={'#081663'}></Loading>
@@ -31,16 +42,16 @@ const SignUp = () => {
         await updateProfile({ displayName: data.name });
         await sendEmailVerification()
         event.target.reset();
-
     };
 
     return (
         <div>
-            <div className="w-4/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
-                <div className=" flex-col lg:flex-row-reverse">
+            <div className="w-4/4 sm:w-3/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
+                <div className=" flex-col justify-center lg:flex-row-reverse">
                     <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="form-control">
+                           <div className=''>
+                           <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
@@ -75,7 +86,7 @@ const SignUp = () => {
                                     {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                                 </label>
                             </div>
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
@@ -99,8 +110,9 @@ const SignUp = () => {
                                     <p className="label-text-alt link link-hover text-red-500">{error && error?.message}</p>
                                 </label>
                             </div>
+                           </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign Up</button>
+                                <button className="btn btn-primary sm:w-2/4 w-3/4 md:w-2/4  lg:w-2/4 xl:w-4/4 mx-auto">Sign Up</button>
                             </div>
                             <p><small>Already Have an Account? <Link className='text-purple-600 font-bold' to='/login'>Login</Link></small></p>
                         </form>

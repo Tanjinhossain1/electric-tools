@@ -23,6 +23,8 @@ import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Blog from './Pages/Blog/Blog';
 import MyPortfolio from './Pages/MyProtfolio/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
+import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 function App() {
   const user = useAuthState(auth)
@@ -34,24 +36,23 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/purchase/:id' element={<Purchase />}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
-        <Route path='/dashboard' element={<Dashboard />}>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           {
             admin && <Route index element={<MyProfile />}></Route>
           }
           {
-            !admin&&<Route index element={<MyProfile />}></Route>
+            !admin && <Route index element={<MyProfile />}></Route>
           }
+          <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
+          <Route path='manageProducts' element={<RequireAdmin><ManageProduct /></RequireAdmin>}></Route>
+          <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
           <Route path='myOrders' element={<MyOrders />}></Route>
-           <Route path='makeAdmin' element={<MakeAdmin />}></Route> 
-          <Route path='payment/:id' element={<Payment />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
-          <Route path='manageProducts' element={<ManageProduct />}></Route>
-          <Route path='addProduct' element={<AddProduct />}></Route>
-
+          <Route path='payment/:id' element={<Payment />}></Route>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
