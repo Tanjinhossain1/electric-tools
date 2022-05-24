@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../../firebase.init';
 
@@ -8,7 +8,7 @@ const User = ({ user, refetch }) => {
     const { email, role, _id } = user;
     const navigate = useNavigate()
     const makeAdmin = (id) => {
-        fetch(`http://localhost:5000/makeAdmin/${id}`, {
+        fetch(`https://mighty-ridge-59560.herokuapp.com/makeAdmin/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

@@ -21,7 +21,7 @@ const ProfileForm = ({ children, profile, refetch }) => {
         const linkDin = event.target.linkDin.value;
         const profileDetail = { name, email, education, location, number, linkDin };
         if (profile.length < 1) {
-            fetch('http://localhost:5000/addProfile', {
+            fetch(`https://mighty-ridge-59560.herokuapp.com/addProfile`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -40,9 +40,9 @@ const ProfileForm = ({ children, profile, refetch }) => {
                 .then(data => {
                     if (data.acknowledged) {
                         toast.success('Admin Add SuccessFully!')
-                    }else{
+                    } else {
                         toast.error('profile add compleat!')
-                    }  
+                    }
                     console.log(data)
                     // toast.success('profile add compleat!')
                     event.target.reset()

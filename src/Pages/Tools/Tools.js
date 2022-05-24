@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Sheared/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, data: tools } = useQuery('tools', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch(`https://mighty-ridge-59560.herokuapp.com/tools`).then(res =>
             res.json()
         )
     )
+  
     if (isLoading) {
         return <Loading color={'#1414e3'} loading={isLoading} />
     }
-
+    console.log(tools,'tools')
+if(tools){
     return (
         <div>
             <div className='w-3/4 mx-auto my-20 '>
@@ -26,6 +28,7 @@ const Tools = () => {
 
         </div>
     );
+}
 };
 
 export default Tools;

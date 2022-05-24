@@ -4,8 +4,8 @@ import Loading from '../Sheared/Loading';
 import Review from './Review'
 
 const UserReviews = () => {
-    const { isLoading, data: reviews, refetch } = useQuery('reviews', () =>
-        fetch(`http://localhost:5000/reviews`,).then(res =>
+    const { isLoading, data: reviews } = useQuery('reviews', () =>
+        fetch(`https://mighty-ridge-59560.herokuapp.com/reviews`).then(res =>
             res.json()
         )
     )

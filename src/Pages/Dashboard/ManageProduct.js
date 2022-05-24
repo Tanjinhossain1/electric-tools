@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
 import Loading from '../Sheared/Loading';
 import ManageTool from './ManageTool';
 
 const ManageProduct = () => {
 
     const { isLoading, data: tools, refetch } = useQuery('tools', () =>
-        fetch('http://localhost:5000/tools').then(res =>
+        fetch(`https://mighty-ridge-59560.herokuapp.com/tools`).then(res =>
             res.json()
         )
     )

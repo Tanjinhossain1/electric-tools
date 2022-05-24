@@ -2,10 +2,10 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const ManageOrder = ({ order, index, refetch }) => {
-    const { toolName, newPrice, paid, img, _id, shipped } = order;
+    const { toolName, newPrice,email, paid, img, _id, shipped } = order;
     const shippedPaid = (id) => {
         console.log(id)
-        fetch(`http://localhost:5000/updatePaid/${id}`, {
+        fetch(`https://mighty-ridge-59560.herokuapp.com/updatePaid/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -22,6 +22,7 @@ const ManageOrder = ({ order, index, refetch }) => {
     return (
         <tr>
             <th>{index}</th>
+            <th><small>{email}</small></th>
 
             <td> <div className="avatar">
                 <div className="w-14 rounded-full ring ">
