@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useFindAdmin from '../hooks/useFindAdmin';
 import Loading from '../Sheared/Loading';
@@ -15,8 +16,8 @@ const RequireAdmin = ({ children }) => {
         return <Loading loading={loading} color={'#081663'}></Loading>
     }
     if (!user || !admin) {
-        signOut(auth);
-        return <Navigate to="/login" state={{ from: location }} replace />;
+        toast.error('Your Not A Admin')
+        return <Navigate to="/home" state={{ from: location }} replace />;
     }
 
     return children;

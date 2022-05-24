@@ -13,16 +13,7 @@ const MakeAdmin = () => {
     if (isLoading) {
         return <Loading loading={isLoading} color={'#10e817'}></Loading>
     }
-    // console.log(allUser)
-    // if(allUser){
-    // console.log(allUser)
-    //     return(
-    //         <div>
-    //          {allUser?.map(user=>console.log(user))}
-    //      </div>
-    //  )
-    // }
-    // console.log(allUser)
+
     if (allUser) {
         return (
             <div>

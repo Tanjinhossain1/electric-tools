@@ -19,7 +19,7 @@ const Dashboard = () => {
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
-                    <label for="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Others</label>
+                    
                     <Outlet />
                 </div>
                 <div className="drawer-side">

@@ -1,5 +1,7 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 // import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,7 +9,8 @@ import auth from '../../../firebase.init';
 
 
 const ProfileForm = ({ children, profile, refetch }) => {
-    const [user] = useAuthState(auth)
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate()
     const addProfile = (event) => {
         event.preventDefault();
         const name = user?.displayName;
@@ -21,14 +24,27 @@ const ProfileForm = ({ children, profile, refetch }) => {
             fetch('http://localhost:5000/addProfile', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(profileDetail)
             })
-                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth)
+                        toast.error('You Are not a Valid user Login again')
+                        navigate('/home')
+                    }
+                    return res.json()
+                })
                 .then(data => {
+                    if (data.acknowledged) {
+                        toast.success('Admin Add SuccessFully!')
+                    }else{
+                        toast.error('profile add compleat!')
+                    }  
                     console.log(data)
-                    toast.success('profile add compleat!')
+                    // toast.success('profile add compleat!')
                     event.target.reset()
                     refetch()
                 })

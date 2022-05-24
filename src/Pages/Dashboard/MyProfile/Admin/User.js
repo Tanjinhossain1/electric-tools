@@ -1,19 +1,34 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../../../firebase.init';
 
 const User = ({ user, refetch }) => {
     const { email, role, _id } = user;
+    const navigate = useNavigate()
     const makeAdmin = (id) => {
         fetch(`http://localhost:5000/makeAdmin/${id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth)
+                    toast.error('You Are not a Valid user Login again')
+                    navigate('/home')
+                }
+                return res.json()
+            })
             .then(data => {
-                console.log(data)
-                toast.success('Admin Add SuccessFully!')
+                if (data.acknowledged) {
+                    toast.success('Admin Add SuccessFully!')
+                }else{
+                    toast.error('Fail To Make Admin')
+                }        
                 refetch()
             })
     }

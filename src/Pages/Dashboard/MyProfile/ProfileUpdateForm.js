@@ -26,15 +26,28 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
         fetch(`http://localhost:5000/profileUpdate/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(profileDetail)
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth)
+                    toast.error('You Are not a Valid user Login again')
+                    navigate('/home')
+                }
+                return res.json()
+            })
             .then(data => {
-                event.target.reset()
+                if (data.acknowledged) {
+                    toast.success('profile add compleat!')
+                }else{
+                    toast.error('Fail To Update Profile!')
+                }  
                 console.log(data)
-                toast.success('Profile Update SuccessFull!')
+                // toast.success('profile add compleat!')
+                event.target.reset()
                 refetch()
             })
         // }
