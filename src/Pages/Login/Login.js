@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 
 const Login = () => {
     const [email, setEmail] = useState('');
+    
     const [signInWithGoogle, googleUser, GoogleLoading, googleError] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,

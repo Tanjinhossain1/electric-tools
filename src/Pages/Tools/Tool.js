@@ -9,8 +9,8 @@ const Tool = ({ tool }) => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth)
     const [admin] = useFindAdmin(user)
-
     const { name, description, price, img, minimumQuantity, availableQuantity, _id } = tool;
+
     return (
         <div className='rounded-lg border ease-in duration-700 hover:text-white hover:shadow-2xl hover:bg-black shadow-lg p-4 m-6'>
             <img className='w-full rounded-lg' src={img} alt="" />
@@ -23,7 +23,7 @@ const Tool = ({ tool }) => {
                 </div>
                 <h1><small>Description: {description}</small></h1>
                {
-                user && admin ? <button className="btn mt-2 btn-outline w-full ease-in-out duration-500">Update</button>:
+                user && admin ? <button onClick={()=>navigate(`/updateProduct/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Update</button>:
                 <button onClick={() => navigate(`/purchase/${_id}`)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Purchase</button>
                }
             </div>

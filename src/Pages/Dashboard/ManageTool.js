@@ -31,7 +31,7 @@ const ManageTool = ({ tool, refetch }) => {
 
                 </div>
                 <h1><small>Description: {description}</small></h1>
-                <label for="deleteModal" onClick={() => setOpen(!open)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Delete</label>
+                <label htmlFor="deleteModal" onClick={() => setOpen(!open)} className="btn mt-2 btn-outline w-full ease-in-out duration-500">Delete</label>
                 {open && <DeleteModal > <button onClick={() => deleteProduct(_id)} className="btn btn-outline bg-red-500 border-0">Confirm Delete</button></DeleteModal>}
 
             </div>

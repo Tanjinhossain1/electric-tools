@@ -16,8 +16,8 @@ const ManageOrders = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
 
                         <tr>
@@ -32,10 +32,10 @@ const ManageOrders = () => {
                     </thead>
                     <tbody>
                         {
-                                manageOrders.map((order,index)=><ManageOrder index={index} key={order._id} order={order} refetch={refetch}></ManageOrder>)
+                            manageOrders.map((order, index) => <ManageOrder index={index} key={order._id} order={order} refetch={refetch}></ManageOrder>)
                         }
 
-                       
+
 
                     </tbody>
                 </table>

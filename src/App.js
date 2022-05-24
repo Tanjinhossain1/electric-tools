@@ -26,6 +26,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
+import UpdateProduct from './Pages/Tools/UpdateProduct';
 
 function App() {
   const user = useAuthState(auth)
@@ -40,6 +41,7 @@ function App() {
         <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/updateProduct/:id' element={<RequireAdmin><UpdateProduct /></RequireAdmin>}></Route>
         <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
           {

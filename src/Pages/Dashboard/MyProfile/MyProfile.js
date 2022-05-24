@@ -24,11 +24,11 @@ const MyProfile = () => {
       <div className='grid lg:grid-cols-2'>
         <ProfileUpdateForm refetch={refetch} profile={profile}>Update Profile</ProfileUpdateForm>
         <div className='p-4 '>
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <div class="card-body">
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card-body">
               <p className='text-xl font-bold'>Name: {user?.displayName}</p>
               <p className='text-xl font-bold'>Email: {user?.email}</p>
-              <h2 class="card-title">Education: {education}</h2>
+              <h2 className="card-title">Education: {education}</h2>
               <p className='text-xl'>Location: {location}</p>
               <p className='text-xl'>Number: {number}</p>
               <p className='text-xl'>LinkDin Profile: <a className='text-blue-700 font-bold' target='_blank' rel='noreferrer' href={linkDin}>{linkDin}</a></p>

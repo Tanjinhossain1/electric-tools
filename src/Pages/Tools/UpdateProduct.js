@@ -1,74 +1,18 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
 
-const AddProduct = () => {
+
+const UpdateProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const imgKey = 'dd6aa9e917ed30c4f9f495bf1f8866ee';
-    const navigate = useNavigate()
 
-    const onSubmit = (data, event) => {
+    const onSubmit = (data) => {
         console.log(data)
-        const { name, description, availableQuantity, minimumQuantity, price } = data;
-        const image = data.img[0];
-        const url = `https://api.imgbb.com/1/upload?key=${imgKey}`;
-        const formData = new FormData();
-        formData.append('image', image)
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-            .then(res => res.json())
-            .then(result => {
-                if (result.success) {
-                    const img = result.data.url;
-                    const productDetail = { name, description, availableQuantity, minimumQuantity, price, img }
-                    if (+minimumQuantity > 0 && +availableQuantity > 0) {
-                        if (+price > 0) {
-                            if (+minimumQuantity < +availableQuantity) {
-                                fetch('http://localhost:5000/addProduct', {
-                                    method: 'POST',
-                                    headers: {
-                                        'content-type': 'application/json',
-                                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                                    },
-                                    body: JSON.stringify(productDetail)
-                                })
-                                    .then(res => {
-                                        if (res.status === 401 || res.status === 403) {
-                                            signOut(auth)
-                                            navigate('/home')
-                                            toast.error('You Are not a Valid user Login again')
-                                        }
-                                        return res.json()
+        toast.success('Update Product is not impleamnet after assaignment i update it')
 
-                                    })
-                                    .then(data => {
-                                        console.log(data)
-                                        if (data.insertedId) {
-                                            toast.success('Product Add SuccessFully!')
-                                            event.target.reset()
-                                        } else {
-                                            toast.error('Fail To Add Product')
-                                        }
-                                    })
-                            } else {
-                                toast.error('Increase Your Available Quantity!')
-                            }
-                        } else {
-                            toast.error('Type valid Price')
-                        }
-                    } else {
-                        toast.error('Type valid Quantity')
-                    }
-                }
-            })
-    };
+    }
     return (
-        <div>
+        <div className='w-3/4 mx-auto'>
             <h1 className='text-center font-bold text-pink-700 text-xl'>Add Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid justify-center lg:grid-cols-2'>
@@ -110,11 +54,11 @@ const AddProduct = () => {
                     </div>
                 </div>
                 <div className='w-1/4 mx-auto mt-8'>
-                    <input className='btn btn-outline ' type="submit" value="Add Product" />
+                    <input className='btn btn-outline ' type="submit" value="Update Product" />
                 </div>
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;
