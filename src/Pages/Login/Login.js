@@ -96,7 +96,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control  ">
-                                <button className="btn btn-primary sm:w-3/4">Login</button>
+                                <button className="btn btn-primary sm:w-3/4 lg:w-4/4 mx-auto">Login</button>
                             </div>
                             <p><small>Don't Have an Account? <Link className='text-purple-600 font-bold' to='/signUp'>Create Account</Link></small></p>
                         </form>

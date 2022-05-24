@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Electric Tools
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ### [Live SIte](https://tools-a576c.web.app/).
 
-## Available Scripts
+## Website Feature
 
-In the project directory, you can run:
+#### “*” 1. Website have some differant feature have a Navbar, Banner, Electric Tools, Buisnes Summary, Reviews or footer amd Every Electric Tools hava a Purchase Button.
 
-### `npm start`
+#### “*” 2. When You Click The Button Then Go To The Purchase Page This Page Is Private Protected Route This page You add You Product Quantity and the Product have some limit minimum Quantity or available quantity .
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### “*” 3. When You add Your Quantity or Your Quantity more then minimum quantity or your Quantity is less by MinimumQuantity Then Purchase Button is disabled. You order more then available quantity then also disabled the button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### “*” 4. When you Purchase is Success Fully then All information is have the DashBoard. DashBoard have two type of route one is user only and two is admin only.
+Normal User can purchase the product. Dashboard have (user only) my orders or add a review and my profile is active for all type of user.
 
-### `npm test`
+#### “*” 5. MyOrder page show the all product when you purchase and ther have a order button you click the order button then go to the payment route you give the card information and click pay button then your product is paid or you see the transection IO or Myorder page.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### “*” 6. When You dont pay the orders then you cancel the product on your my order page when you paid for it then dont cances or delete it. This Page have login or sign up page also have a potfolio this page have my education or skill information also have a blog route ther have 6 question or answer.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### “*” 7. When You login as a admin Then You will see more feature on this first is my profile is this comon and have a make admin page on dashboard make admin page is you will make some admin for your work on this website and have add a product this page you add a product when your token is not valid then you add product then you logd out on this page.
+#### “*” 8. Manage all product page see the all product you have (as a admin) and ther you delete the product if you need.
+## 
+## Technologies Use:
+#### 1. React.js                   
+#### 2. Node.js
+#### 3. MongoDB
+#### 4. Firebase
+#### 5. Express.sj
+#### 6. React Query
+#### 7. React Router Dom
+#### 8. Tailwind
+#### 9. DaisyUi
+#### 10. React Spinner 
+#### 11. React FontAwsome
+#### 12. React Hook Form
+#### 13. React Toastify
+#### 14. Json Web Token
+#### 15. Stripe
