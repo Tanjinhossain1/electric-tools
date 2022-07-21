@@ -24,10 +24,10 @@ const AddReview = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero  min-h-screen bg-base-200">
                 <form onSubmit={addReview} className="hero-content ">
                     <div className="card flex-shrink-0   shadow-2xl bg-base-100">
-                        <div className="card-body">
+                        <div className="card-body w-[320px] sm:w-[450px]">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Add Ratings</span>
@@ -44,7 +44,8 @@ const AddReview = () => {
                                 <label className="label">
                                     <span className="label-text">Description</span>
                                 </label>
-                                <textarea type="text" name='description' placeholder="Description" className="input input-bordered" required />
+                                <textarea type="text" name='description' placeholder="Description" className="textarea textarea-bordered " cols="1" rows="4" required />
+                               
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Add Review</button>
