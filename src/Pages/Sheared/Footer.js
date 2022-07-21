@@ -5,8 +5,8 @@ const Footer = () => {
     const date = new Date();
     const year = date.getFullYear()
     return (
-        <footer className='bg-[#071036]'>
-            <div className="footer p-10  text-neutral-content">
+        <footer className='bg-[#1e2442]'>
+            <div className="footer  p-32 text-neutral-content">
                 <div>
                     <span className="footer-title">Services</span>
                     <Link to='/' className="link link-hover">Branding</Link>
@@ -27,9 +27,20 @@ const Footer = () => {
                     <Link to='/' className="link link-hover">Privacy policy</Link>
                     <Link to='/' className="link link-hover">Cookie policy</Link>
                 </div>
+                <div>
+                    <span className="footer-title">Contact</span>
+                    <Link to='/' className="link link-hover">Facebook</Link>
+                    <Link to='/' className="link link-hover">LinkDin</Link>
+                </div>
 
             </div>
+            <hr />
+            <div className='w-3/4  mx-auto my-6 flex items-center '>
+            <input type="text" placeholder="Email" class="input input-bordered input-primary w-full max-w-xs" />
+            <button class="btn btn-active border-2 btn-primary">Button</button>
+            </div>
             <p className='text-white text-center pb-4'>Copyright © {year} - All right reserved by ACME Industries Ltd</p>
+            <p className='text-white text-center pb-4'>Terms of Use  Privacy Policy</p>
         </footer>
     );
 };
