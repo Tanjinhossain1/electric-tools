@@ -14,8 +14,13 @@ const Navbar = () => {
         {user &&
             <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
         }
+        <li className='text-xl'><Link to='/allProducts'>AllProducts</Link></li>
+        <li className='text-xl'><Link to='/myOrders'>MyOrders</Link></li>
+        <li className='text-xl'><Link to='/myProfile'>My Profile</Link></li>
         <li className='text-xl'><Link to='/blog'>Blog</Link></li>
+        
         <li className='text-xl'><Link to='/myPortfolio'>MyPortfolio</Link></li>
+
         {user ? <li><button className='btn btn-ghost text-xl' onClick={() => logout()}>Log Out
             <div className="avatar">
                 {
@@ -36,7 +41,7 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div className=''>
-                            <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                            <label tabIndex="0" className="btn btn-ghost xl:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </label>
 
@@ -50,7 +55,7 @@ const Navbar = () => {
                         <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Others</label>
                     </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li>  {navItems} </li>
                     </ul>

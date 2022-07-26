@@ -6,7 +6,7 @@ const ManageTool = ({ tool, refetch }) => {
     const [open, setOpen] = useState(false)
     const deleteProduct = (id) => {
         // console.log('clicked',id)
-        fetch(`https://mighty-ridge-59560.herokuapp.com/deleteProduct/${id}`, {
+        fetch(`https://electric-tools.herokuapp.com/deleteProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

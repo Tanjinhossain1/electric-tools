@@ -6,6 +6,7 @@ import Category from './Category';
 import SpecialOffers from './SpecialOffers';
 import TrendingTools from './TrendingTools';
 import UserReviews from './UserReviews';
+import Workflow from './Workflow';
 
 const Home = () => {
     return (
@@ -14,9 +15,10 @@ const Home = () => {
             <Category />
             <BusinessSummary />
             <Tools />
-            <UserReviews />
             <SpecialOffers />
             <TrendingTools />
+            <Workflow />
+            <UserReviews />
         </div>
     );
 };

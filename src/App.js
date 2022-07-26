@@ -38,10 +38,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/allProducts' element={<AllProducts />}></Route>
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>}></Route>
+        <Route path='/purchase/:id' element={<Purchase />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/myOrders' element={<MyOrders />}></Route>
+        <Route path='/myProfile' element={<MyProfile />}></Route>
         <Route path='/updateProduct/:id' element={<RequireAdmin><UpdateProduct /></RequireAdmin>}></Route>
         <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
@@ -55,8 +58,8 @@ function App() {
           <Route path='manageProducts' element={<RequireAdmin><ManageProduct /></RequireAdmin>}></Route>
           <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
           <Route path='manageOrders' element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
-          <Route path='myOrders' element={<MyOrders />}></Route>
-          <Route path='allProducts' element={<AllProducts />}></Route>
+          {/* <Route path='myOrders' element={<MyOrders />}></Route> */}
+        
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
         </Route>

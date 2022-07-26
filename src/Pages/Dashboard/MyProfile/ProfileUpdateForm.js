@@ -23,7 +23,7 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
         console.log(profileDetail)
         // if (profile.length < 1) {
         console.log(_id)
-        fetch(`https://mighty-ridge-59560.herokuapp.com/profileUpdate/${_id}`, {
+        fetch(`https://electric-tools.herokuapp.com/profileUpdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

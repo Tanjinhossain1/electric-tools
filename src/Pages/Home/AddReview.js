@@ -7,7 +7,7 @@ const AddReview = () => {
         const rate = event.target.rate.value;
         const description = event.target.description.value;
         const review = { rate, description }
-        fetch(`https://mighty-ridge-59560.herokuapp.com/addReview`, {
+        fetch(`https://electric-tools.herokuapp.com/addReview`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const AddReview = () => {
                                     <span className="label-text">Description</span>
                                 </label>
                                 <textarea type="text" name='description' placeholder="Description" className="textarea textarea-bordered " cols="1" rows="4" required />
-                               
+
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Add Review</button>

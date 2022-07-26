@@ -13,7 +13,7 @@ const Tool = ({ tool }) => {
 
     return (
         <div className='rounded-lg border ease-in duration-700 hover:text-white hover:shadow-2xl hover:bg-black shadow-lg p-4 m-6'>
-            <img className='w-full rounded-lg' src={img} alt="" />
+            <img className='w-full  h-[400px] rounded-lg' src={img} alt="" />
             <div>
                 <h1 className='text-xl'>Name: {name}</h1>
                 <h1>Price: <span className='text-pink-500 font-bold'>{price}$</span></h1>

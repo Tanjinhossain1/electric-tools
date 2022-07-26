@@ -5,7 +5,7 @@ import ManageOrder from './ManageOrder';
 
 const ManageOrders = () => {
     const { isLoading, data: manageOrders, refetch } = useQuery('manageOrders', () =>
-        fetch(`https://mighty-ridge-59560.herokuapp.com/allOrders`,).then(res =>
+        fetch(`https://electric-tools.herokuapp.com/allOrders`,).then(res =>
             res.json()
         )
     )

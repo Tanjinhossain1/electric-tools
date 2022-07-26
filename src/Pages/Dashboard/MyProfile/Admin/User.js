@@ -8,7 +8,7 @@ const User = ({ user, refetch }) => {
     const { email, role, _id } = user;
     const navigate = useNavigate()
     const makeAdmin = (id) => {
-        fetch(`https://mighty-ridge-59560.herokuapp.com/makeAdmin/${id}`, {
+        fetch(`https://electric-tools.herokuapp.com/makeAdmin/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

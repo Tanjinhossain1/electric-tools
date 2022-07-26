@@ -5,7 +5,35 @@
         "description": "Another essential electrical specialty tool for homeowners is a good pair of wire strippers. Wire strippers are used to cut and strip insulation from electrical wires. ",
         "minimumQuantity": 100,
         "availableQuantity": 5000,
-        "price": 37
+        "price": 89,
+        "category":"wire"
+    },
+    {
+        "name": "Multi-Functional ",
+        "img": "https://m.media-amazon.com/images/I/61OtPfu3CzL._AC_SX466_.jpg",
+        "description": "This is one of the electrical wire stripping tools I’ve previously worked with. It can cut and strip solid copper and aluminum wires from 10 to 22 AWG.",
+        "minimumQuantity": 300,
+        "availableQuantity": 5000,
+        "price": 49,
+        "category":"wire"
+    },
+    {
+        "name": "DOWELL 54939 ",
+        "img": "https://images-na.ssl-images-amazon.com/images/I/61bCgmjDraL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+        "description": "This small wire stripping tool allows you to strip wires in a simple one-handed motion. It will grab hold, pull, and remove outer jackets cleanly.",
+        "minimumQuantity": 700,
+        "availableQuantity": 7000,
+        "price": 79,
+        "category":"wire"
+    },
+    {
+        "name": "Wire Crimpers",
+        "img": "https://www.thespruce.com/thmb/PGlshwI8kDghPtuAmZXnFQO4SfA=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_17_wire_crimpers3241-4aa64ef77eb542b08294fa8cff6c252d.jpg",
+        "description": "Wire crimpers are used to crimp lugs or connection terminals onto wires. This tool is not often used for routine circuit repairs, but it has many uses. ",
+        "minimumQuantity": 600,
+        "availableQuantity": 8000,
+        "price": 69,
+        "category":"wire"
     },
     {
         "name": "Needle-Nose Pliers",
@@ -13,7 +41,8 @@
         "description": "Another essential specialty electrical tool is a pair of needle-nose pliers. It will be used for twisting wires whenever you are making screw-terminal connections. ",
         "minimumQuantity": 100,
         "availableQuantity": 200,
-        "price": 20
+        "price": 20,
+        "category":"pliers"
     },
     {
         "name": "Linesman Pliers",
@@ -21,7 +50,8 @@
         "description": "A pair of linesman pliers is an electrician's do-it-all tool. It has a squared-off end that is great for twisting wires together, a center cutting blade for trimming wire.",
         "minimumQuantity": 100,
         "availableQuantity": 1000,
-        "price": 40
+        "price": 40,
+        "category":"pliers"
     },
     {
         "name": "Voltmeter or Multimeter",
@@ -29,15 +59,63 @@
         "description": "A voltmeter is used to read voltage levels and verify that circuits are “live” or off. This tool gives you reading on how much voltage is being carried.",
         "minimumQuantity": 100,
         "availableQuantity": 1200,
-        "price": 30
+        "price": 30,
+        "category":"meter"
     },
+    {
+        "name": "Electric meter",
+        "img": "https://energyeducation.ca/wiki/images/thumb/c/c4/Quebecmeter.jpg/200px-Quebecmeter.jpg",
+        "description": "An electric meter is a device used to measure the electrical energy usage of a home, building, or other electrically powered device.",
+        "minimumQuantity": 900,
+        "availableQuantity": 12000,
+        "price": 20,
+        "category":"meter"
+    },
+   
     {
         "name": "Tongue-and-Groove Pliers",
         "img": "https://www.thespruce.com/thmb/OQ3Mv5mE2XOA_UKy7QPmJ1s5rPg=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_09_tonguegroovepliers_3242-10f7403cafb44b7bb11ae89a31b8f865.jpg",
         "description": "Tongue-and-groove pliers are known by many names, including channel-lock, groove joint, tongue-and-groove, and straight-jaw pliers. ",
-        "minimumQuantity": 100,
+        "minimumQuantity": 1000,
+        "availableQuantity": 1000,
+        "price": 45,
+        "category":"pliers"
+    },
+    {
+        "name": "Needle-Nose Pliers",
+        "img": "https://www.thespruce.com/thmb/hdbMA6f8pypK1iJPrYHfuXSNyBw=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_12_needlenosepliers_3255-0bee5993441d42ac9e5ab71611aca72a.jpg",
+        "description": "Another essential specialty electrical tool is a pair of needle-nose pliers (also called long-nose pliers). It will be used for bending and twisting wires whenever you are making. ",
+        "minimumQuantity": 200,
         "availableQuantity": 2000,
-        "price": 45
+        "price": 85,
+        "category":"pliers"
+    },
+    {
+        "name": "Linesman Pliers",
+        "img": "https://www.thespruce.com/thmb/hdbMA6f8pypK1iJPrYHfuXSNyBw=/434x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-electrical-tools-1152575_12_needlenosepliers_3255-0bee5993441d42ac9e5ab71611aca72a.jpg",
+        "description": " pair of linesman pliers is an electrician's do-it-all tool. It has a squared-off end that is great for twisting wires together, a center cutting blade for trimming. ",
+        "minimumQuantity": 500,
+        "availableQuantity": 20000,
+        "price": 50,
+        "category":"pliers"
+    },
+    {
+        "name": "Clamp Meter",
+        "img": "https://electricianworld.net/wp-content/uploads/2021/01/clamp-meter-electrical.jpg",
+        "description": "To measure AC/DC voltage, AC/DC current, resistance, capacitance, frequency, and duty cycle. Do you know AC and DC stands for.",
+        "minimumQuantity": 800,
+        "availableQuantity": 2000,
+        "price": 99,
+        "category":"meter"
+    },
+    {
+        "name": "Digital electricity meter",
+        "img": "https://callmepower.com/sites/callmepower.com/files/images/digital-electricity-meter.jpg",
+        "description": "Digital electricity meters are rather simple to read. The display only shows digit on an LCD or LED screen, so there is no hand display.",
+        "minimumQuantity": 850,
+        "availableQuantity": 2500,
+        "price": 91,
+        "category":"meter"
     },
     {
         "name": "Flashlight",
@@ -45,6 +123,34 @@
         "description": "Electrical repair and improvement work involves a lot of dark places, from attics and basements, to wall and ceiling cavities, to the insides of electrical boxes. ",
         "minimumQuantity": 300,
         "availableQuantity": 4000,
-        "price": 45
+        "price": 19,
+        "category":"light"
+    },
+    {
+        "name": "Bulb Flashlights",
+        "img": "https://www.homestratosphere.com/wp-content/uploads/2018/10/incandescent-flashlight-oct232018-min-870x532.jpg",
+        "description": "Incandescent bulb flashlights are the most common type found in people’s homes. They have been around for many decades and usually run on D batteries. ",
+        "minimumQuantity": 800,
+        "availableQuantity": 4000,
+        "price": 39,
+        "category":"light"
+    },
+    {
+        "name": "LED Flashlights",
+        "img": "https://www.homestratosphere.com/wp-content/uploads/2018/10/LED-flashlight-way-oct232018-min.jpg",
+        "description": "There are situations where having an LED flashlight is going to be preferable. They don’t work in the same way. ",
+        "minimumQuantity": 750,
+        "availableQuantity": 4500,
+        "price": 59,
+        "category":"light"
+    },
+    {
+        "name": "Solar-Powered Flashlights",
+        "img": "https://www.homestratosphere.com/wp-content/uploads/2018/10/solar-flashlight-oct232018-min-870x599.jpg",
+        "description": "It’s no secret that environmental concerns have started to change the way that people look at the world.",
+        "minimumQuantity": 650,
+        "availableQuantity": 6500,
+        "price": 69,
+        "category":"light"
     }
 ]

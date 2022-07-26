@@ -24,18 +24,18 @@ const Purchase = () => {
     console.log(quantity)
     const onSubmit = (data, event) => {
         console.log(data)
-        const email = data.email;
-        const name = data.name;
+        const email = user?.email;
+        const name = user?.displayName;
         const number = data.number;
         // const quantity = data.minimumQuantity;
         const address = data.address;
 
-        if (+quantity > availableQuantity) {
+        if (+quantity >= availableQuantity) {
             toast(`We have only ${availableQuantity} tools `)
         }
-        if (availableQuantity > +quantity) {
-            if (minimumQuantity <= quantity) {
-                const newPrice = +quantity * price
+        if (availableQuantity >= +quantity) {
+            if (minimumQuantity <= data.minimumQuantity) {
+                const newPrice = +data.minimumQuantity * price
                 fetch(`https://electric-tools.herokuapp.com/purchase`, {
                     method: 'POST',
                     headers: {
@@ -63,12 +63,12 @@ const Purchase = () => {
                 <label className="label">
                     <span className="label-text">Name</span>
                 </label>
-                <input  {...register("name")} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs " required />
+                <input defaultValue={user?.displayName} {...register("name")} type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs " readOnly disabled />
 
                 <label className="label mt-2">
                     <span className="label-text">Email</span>
                 </label>
-                <input  {...register("email")} type="email" placeholder="Type here" className="input input-bordered  input-primary w-full max-w-xs" required />
+                <input defaultValue={user?.email} {...register("email")} type="text" placeholder="Type here" className="input input-bordered  input-primary w-full max-w-xs" readOnly disabled />
 
                 <label className="label">
                     <span className="label-text">Number</span>
@@ -103,7 +103,7 @@ const Purchase = () => {
                 </label>
                 <input onChange={(e) => setQuantity(e.target.value)} defaultValue={quantity} type="text" placeholder="Add Quantity" className="input input-bordered  w-full max-w-xs " />
 
-                <input disabled={minimumQuantity > +quantity || availableQuantity < +quantity} className="btn btn-outline mt-2 block sm:w-[360px] w-[210px] md:w-3/4 lg:[500px]  2xl:w-[300px] " type="submit" value='Purchase' />
+                <input disabled={minimumQuantity >= +quantity || availableQuantity <= +quantity} className="btn btn-outline mt-2 block sm:w-[360px] w-[210px] md:w-3/4 lg:[500px]  2xl:w-[300px] " type="submit" value='Purchase' />
             </form>
         </div>
     );
