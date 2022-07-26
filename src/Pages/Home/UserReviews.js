@@ -23,10 +23,11 @@ const UserReviews = () => {
         return <Loading loading={isLoading} color={'#14aac4'}></Loading>
     }
     return (
-        <div className='mb-12'>
-            <h1 className='text-4xl text-center text-blue-900 font-bold mb-5'>Reviews</h1>
-            <div className='w-3/4 mx-auto  shadow-2xl rounded-lg'>
+        <div className='mb-12 '>
+            <h1 className='text-4xl  text-center text-blue-900 font-bold mb-5'>Reviews</h1>
+            <div className='w-3/4  mx-auto   rounded-lg'>
                 <Swiper
+                
                     spaceBetween={50}
                     // slidesPerView={3}
                     breakpoints={{

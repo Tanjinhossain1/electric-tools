@@ -41,9 +41,9 @@ const Login = () => {
 
     return (
         <div>
-            <div className="w-3/4 md:w-3/4 lg:w-2/4 xl:w-1/4 mx-auto my-24">
+            <div className="w-3/4 md:w-3/4  lg:w-2/4 xl:w-1/4 mx-auto my-24">
                 <div className=" flex-col lg:flex-row-reverse">
-                    <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
+                    <div className="border-2 border-blue-600 rounded-lg  card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control ">
                                 <label className="label">

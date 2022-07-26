@@ -7,19 +7,23 @@ const AddReview = () => {
         const rate = event.target.rate.value;
         const description = event.target.description.value;
         const review = { rate, description }
-        fetch(`https://electric-tools.herokuapp.com/addReview`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(review)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                toast('Review Add SuccessFully')
-                event.target.reset();
+        if (description.length > 130){
+            toast.error('You can type only 130 words')
+        }else{
+            fetch(`https://electric-tools.herokuapp.com/addReview`, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(review)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    toast('Review Add SuccessFully')
+                    event.target.reset();
+                })
+            }
 
     }
     return (
@@ -44,7 +48,7 @@ const AddReview = () => {
                                 <label className="label">
                                     <span className="label-text">Description</span>
                                 </label>
-                                <textarea type="text" name='description' placeholder="Description" className="textarea textarea-bordered " cols="1" rows="4" required />
+                                <textarea type="text" name='description' placeholder="highest 130 words" className="textarea textarea-bordered " cols="1" rows="4" required />
 
                             </div>
                             <div className="form-control mt-6">

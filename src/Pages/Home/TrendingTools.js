@@ -2,7 +2,7 @@ import React from 'react';
 
 const TrendingTools = () => {
     return (
-        <div className='my-12'>
+        <div className='my-32'>
             <h1 className='text-center  font-bold text-[#26264a] text-5xl'>Trending Tools</h1>
             <div className='grid w-3/4 mx-auto mt-8 lg:grid-cols-4 text-center text-xl'>
                 <div className='m-4'>

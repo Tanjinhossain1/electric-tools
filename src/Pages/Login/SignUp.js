@@ -48,7 +48,7 @@ const SignUp = () => {
         <div>
             <div className="w-4/4 sm:w-3/4 md:w-3/4 lg:w-1/4 mx-auto my-24">
                 <div className=" flex-col justify-center lg:flex-row-reverse">
-                    <div className="card p-2 flex-shrink-0 shadow-2xl bg-base-100">
+                    <div className="border-2 border-blue-600 rounded-lg  card p-2 flex-shrink-0 shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                            <div className=''>
                            <div className="form-control">

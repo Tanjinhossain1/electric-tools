@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import DeleteModal from './DeleteModal';
 
-const Order = ({ order, refetch }) => {
+const Order = ({ order, refetch, index }) => {
     const navigate = useNavigate()
     const { newPrice, toolName, quantity, _id, paid, transactionId } = order;
     const [open, setOpen] = useState(false)
@@ -26,10 +26,11 @@ const Order = ({ order, refetch }) => {
     }
     return (
         <tr>
+            <th>{index + 1}</th>
             <th>{toolName}</th>
             <td>{newPrice}</td>
             <td>{quantity}</td>
-            {paid ? <td className='text-green-500'>paid <br /> <small>transactionId: <br /> {transactionId}</small></td> : <td> <button onClick={() => navigate(`/dashboard/payment/${_id}`)} className="btn btn-outline bg-green-600 border-0 text-white">Order</button></td>}
+            {paid ? <td className='text-green-500'>paid <br /> <small>transactionId: <br /> {transactionId}</small></td> : <td> <button onClick={() => navigate(`/payment/${_id}`)} className="btn btn-outline bg-green-600 border-0 text-white">Order</button></td>}
             {
                 !paid &&
                 <td><label htmlFor="deleteModal" onClick={() => setOpen(!open)} className="btn bg-red-600 border-0 btn-circle btn-outline">

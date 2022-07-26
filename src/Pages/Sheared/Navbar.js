@@ -3,7 +3,8 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const logout = () => {
@@ -15,11 +16,28 @@ const Navbar = () => {
             <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
         }
         <li className='text-xl'><Link to='/allProducts'>AllProducts</Link></li>
-        <li className='text-xl'><Link to='/myOrders'>MyOrders</Link></li>
-        <li className='text-xl'><Link to='/myProfile'>My Profile</Link></li>
-        <li className='text-xl'><Link to='/blog'>Blog</Link></li>
-        
-        <li className='text-xl'><Link to='/myPortfolio'>MyPortfolio</Link></li>
+        {
+            !user && <li className='text-xl'><Link to='/myOrders'>MyOrders</Link></li>
+        }
+
+        <li className='text-xl'><Link to='/addProduct'>Add Product</Link></li>
+        < >
+            <li className='text-xl block xl:hidden'><Link to='/myProfile'>My Profile</Link></li>
+            <li className='text-xl block xl:hidden'><Link to='/addReview'>Add Review</Link></li>
+            <li className='text-xl block xl:hidden'><Link to='/blog'>Blog</Link></li>
+            <li className='text-xl block xl:hidden'><Link to='/myPortfolio'>MyPortfolio</Link></li>
+        </>
+        <div class="dropdown  dropdown-hover hidden xl:flex ">
+            <label tabindex="0" class="text-xl">Pages <FontAwesomeIcon icon={faAngleDown} /></label>
+            <ul tabindex="0" class="dropdown-content menu xl:mt-72 p-2 shadow bg-base-100 rounded-box w-40">
+                <li className='text-xl'><Link to='/myProfile'>My Profile</Link></li>
+                <li className='text-xl'><Link to='/addReview'>Add Review</Link></li>
+                <li className='text-xl'><Link to='/blog'>Blog</Link></li>
+                <li className='text-xl'><Link to='/myPortfolio'>MyPortfolio</Link></li>
+            </ul>
+        </div>
+
+        <li className='text-xl'><Link to='/contactUs'>Contact Us</Link></li>
 
         {user ? <li><button className='btn btn-ghost text-xl' onClick={() => logout()}>Log Out
             <div className="avatar">
@@ -51,9 +69,11 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to='/home' className="btn btn-ghost normal-case text-xl">Electric-Tools</Link>
-                    <div className='text-end'>
-                        <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Others</label>
-                    </div>
+                   {
+                    user&& <div className='text-end'>
+                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Others</label>
+                </div>
+                   }
                 </div>
                 <div className="navbar-center hidden xl:flex">
                     <ul className="menu menu-horizontal p-0">

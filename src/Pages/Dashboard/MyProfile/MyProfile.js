@@ -19,7 +19,7 @@ const MyProfile = () => {
 
   if (profile[0]) {
     const { education, location, number, linkDin } = profile[0];
-    return <div>
+    return <div className='lg:w-3/4 mx-auto'>
       <h1 className='text-xl font-bold text-blue-900'>Update Your Profile</h1>
       <div className='grid lg:grid-cols-2'>
         <ProfileUpdateForm refetch={refetch} profile={profile}>Update Profile</ProfileUpdateForm>
@@ -39,7 +39,7 @@ const MyProfile = () => {
     </div>
   }
   return (
-    <div>
+    <div className='lg:w-3/4 mx-auto'>
       <h1 className='text-xl font-bold text-blue-900'>Add Your Profile </h1>
       <div className='grid lg:grid-cols-2'>
         <div className='sm:space-y-reverse'>

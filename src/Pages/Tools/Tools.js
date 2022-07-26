@@ -40,28 +40,28 @@ const Tools = () => {
                             setMeter(false)
                             setLight(true)
 
-                        }} className={`text-xl ml-6 lg:ml-0  border-b-2 ${light && 'text-orange-600 border-b-orange-600'}`}>Lights</button>
+                        }} className={`text-xl ml-6 lg:ml-0  border-b-4 ${light && 'text-orange-500 border-b-orange-600'}`}>Lights</button>
                         <button onClick={() => {
                             setWire(false)
                             setMeter(false)
                             setLight(false)
                             setPlier(true)
 
-                        }} className={`text-xl border-b-2 ml-8 lg:ml-0 ${plier && 'text-orange-600 border-b-orange-600'}`}>Pliers</button>
+                        }} className={`text-xl border-b-4 ml-8 lg:ml-0 ${plier && 'text-orange-500 border-b-orange-600'}`}>Pliers</button>
                         <button onClick={() => {
                             setPlier(false)
                             setMeter(false)
                             setLight(false)
                             setWire(true)
 
-                        }} className={`text-xl border-b-2  mx-6 lg:mx-0  ${wire && 'text-orange-600 border-b-orange-600'}`}>Wire Cutter</button>
+                        }} className={`text-xl border-b-4  mx-6 lg:mx-0  ${wire && 'text-orange-500 border-b-orange-600'}`}>Wire Cutter</button>
                         <button onClick={() => {
                             setPlier(false)
                             setWire(false)
                             setLight(false)
                             setMeter(true)
 
-                        }} className={`text-xl border-b-2 ${meter && 'text-orange-600 border-b-orange-600'}`}>Meter</button>
+                        }} className={`text-xl border-b-4 ${meter && 'text-orange-600 border-b-orange-500'}`}>Meter</button>
                     </div>
                     <div className='grid lg:grid-cols-2 '>
                         {

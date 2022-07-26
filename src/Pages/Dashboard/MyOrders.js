@@ -14,16 +14,21 @@ const MyOrders = () => {
     //     setEmail(email)
     //     event.target.reset()
     // }
-    const { isLoading, data: orders, refetch } = useQuery('tools', () =>
-        fetch(`https://electric-tools.herokuapp.com/orders?email=${user?.email || email}`,).then(res =>
+    const { isLoading, data: orders, refetch } = useQuery('orders', () =>
+        fetch(`https://electric-tools.herokuapp.com/orders`).then(res =>
             res.json()
         )
     )
     if (isLoading) {
         return <Loading loading={isLoading} color={'#14aac4'}></Loading>
     }
-  
+  if(orders){
 
+      console.log(orders)
+  }
+  if(!orders){
+    console.log('data nai bujso',orders)
+  }
     return (
         <div>
          
@@ -32,6 +37,7 @@ const MyOrders = () => {
 
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
@@ -41,7 +47,7 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map(order => <Order key={order._id} refetch={refetch} order={order}></Order>)
+                            orders.map((order,index) => <Order index={index} key={order._id} refetch={refetch} order={order}></Order>)
                         }
 
                     </tbody>

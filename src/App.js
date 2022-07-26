@@ -28,6 +28,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import ManageOrders from './Pages/Dashboard/ManageOrders';
 import UpdateProduct from './Pages/Tools/UpdateProduct';
 import AllProducts from './Pages/Dashboard/AllProducts';
+import ContactUs from './Pages/Contact/ContactUs';
 
 function App() {
   const user = useAuthState(auth)
@@ -43,8 +44,12 @@ function App() {
         <Route path='/purchase/:id' element={<Purchase />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/addProduct' element={<AddProduct />}></Route>
         <Route path='/myOrders' element={<MyOrders />}></Route>
+        <Route path='/contactUs' element={<ContactUs />}></Route>
         <Route path='/myProfile' element={<MyProfile />}></Route>
+        <Route path='/addReview' element={<AddReview />}></Route>
+        <Route path='/payment/:id' element={<Payment />}></Route>
         <Route path='/updateProduct/:id' element={<RequireAdmin><UpdateProduct /></RequireAdmin>}></Route>
         <Route path='/myPortfolio' element={<MyPortfolio />}></Route>
         <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
@@ -56,10 +61,10 @@ function App() {
           }
           <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
           <Route path='manageProducts' element={<RequireAdmin><ManageProduct /></RequireAdmin>}></Route>
-          <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+          {/* <Route path='addProduct' element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route> */}
           <Route path='manageOrders' element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
-          {/* <Route path='myOrders' element={<MyOrders />}></Route> */}
-        
+          <Route path='myOrders' element={<MyOrders />}></Route>
+
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='payment/:id' element={<Payment />}></Route>
         </Route>

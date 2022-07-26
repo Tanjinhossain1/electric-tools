@@ -23,7 +23,7 @@ const Payment = () => {
         return <Loading loading={isLoading} color={'#b51b7d'}></Loading>
     }
     return (
-        <div className=''>
+        <div className='my-32'>
             <div className='lg:flex items-center shadow-xl lg:w-3/4 mx-auto rounded-lg'>
                 <img className='rounded-l-lg rounded-bl-lg' src={img} alt="" />
                 <div className='ml-12'>

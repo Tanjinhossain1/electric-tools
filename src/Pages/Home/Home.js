@@ -6,6 +6,7 @@ import Category from './Category';
 import SpecialOffers from './SpecialOffers';
 import TrendingTools from './TrendingTools';
 import UserReviews from './UserReviews';
+import WeHelpWith from './WeHelpWith';
 import Workflow from './Workflow';
 
 const Home = () => {
@@ -15,8 +16,9 @@ const Home = () => {
             <Category />
             <BusinessSummary />
             <Tools />
-            <SpecialOffers />
+            <WeHelpWith />
             <TrendingTools />
+            <SpecialOffers />
             <Workflow />
             <UserReviews />
         </div>

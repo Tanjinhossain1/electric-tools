@@ -52,7 +52,7 @@ const ProfileForm = ({ children, profile, refetch }) => {
     }
 
     return (
-        <form onSubmit={addProfile}>
+        <form className='' onSubmit={addProfile}>
             <div className='lg:w-full sm:w-2/4 mb-2 w-3/4 mx-auto'>
                 <label className="label"><span className="label-text">Education</span></label>
                 <input type="text" name='education' placeholder='Your Education' className="input input-bordered input-info w-full max-w-xs" required />

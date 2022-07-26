@@ -12,7 +12,7 @@ const AddProduct = () => {
 
     const onSubmit = (data, event) => {
         console.log(data)
-        const { name, description, availableQuantity, minimumQuantity, price } = data;
+        const { name, description, availableQuantity, minimumQuantity, price,category } = data;
         const image = data.img[0];
         const url = `https://api.imgbb.com/1/upload?key=${imgKey}`;
         const formData = new FormData();
@@ -25,7 +25,10 @@ const AddProduct = () => {
             .then(result => {
                 if (result.success) {
                     const img = result.data.url;
-                    const productDetail = { name, description, availableQuantity, minimumQuantity, price, img }
+                    const productDetail = { name,category, description, availableQuantity, minimumQuantity, price, img };
+                    if(category==='Chose Category'){
+                        toast.error('Please select a category')
+                    }else{
                     if (+minimumQuantity > 0 && +availableQuantity > 0) {
                         if (+price > 0) {
                             if (+minimumQuantity < +availableQuantity) {
@@ -33,16 +36,16 @@ const AddProduct = () => {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json',
-                                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                                        // authorization: `Bearer ${localStorage.getItem('accessToken')}`
                                     },
                                     body: JSON.stringify(productDetail)
                                 })
                                     .then(res => {
-                                        if (res.status === 401 || res.status === 403) {
-                                            signOut(auth)
-                                            navigate('/home')
-                                            toast.error('You Are not a Valid user Login again')
-                                        }
+                                        // if (res.status === 401 || res.status === 403) {
+                                        //     signOut(auth)
+                                        //     navigate('/home')
+                                        //     toast.error('You Are not a Valid user Login again')
+                                        // }
                                         return res.json()
 
                                     })
@@ -65,11 +68,12 @@ const AddProduct = () => {
                         toast.error('Type valid Quantity')
                     }
                 }
+                }
             })
     };
     return (
-        <div>
-            <h1 className='text-center font-bold text-pink-700 text-xl'>Add Product</h1>
+        <div className='lg:w-3/4 mx-auto my-12'>
+            <h1 className='text-center font-bold mb-12 text-pink-700 text-xl'>Add Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid justify-center lg:grid-cols-2'>
                     <div className="form-control w-full max-w-xs mt-2">
@@ -78,6 +82,10 @@ const AddProduct = () => {
                         </label>
                         <input {...register("name", { required: true })} type="text" placeholder="Product Name" className="input input-bordered w-full max-w-xs" required />
                     </div>
+
+                    
+
+
                     <div className="form-control w-full max-w-xs mt-2">
                         <label className="label">
                             <span className="label-text">Description</span>
@@ -109,6 +117,13 @@ const AddProduct = () => {
                         <input type="file" {...register("img", { required: true })} className=" input input-bordered w-full max-w-xs" required />
                     </div>
                 </div>
+                    <select {...register("category", { required: true })} class=" mt-6 select select-bordered w-full max-w-xs">
+                        <option disabled selected>Chose Category</option>
+                        <option>light</option>
+                        <option>pliers</option>
+                        <option>wire</option>
+                        <option>meter</option>
+                    </select>
                 <div className='w-1/4 mx-auto mt-8'>
                     <input className='btn btn-outline ' type="submit" value="Add Product" />
                 </div>

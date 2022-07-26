@@ -5,7 +5,7 @@ const Workflow = () => {
         <div className='w-[300px] my-32 lg:w-3/4 mx-auto' >
             <div className='text-center mb-12'>
                 <p>PROCESS WORKFLOW</p>
-                <h1 className='text-3xl font-bold'>How It Works</h1>
+                <h1 className='text-3xl font-bold mt-4'>How It Works</h1>
             </div>
             <div className='grid gap-12 grid-cols-1  lg:grid-cols-3'>
                 <div className='text-center'>
