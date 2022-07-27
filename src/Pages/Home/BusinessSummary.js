@@ -1,8 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments, faFileCirclePlus, faScrewdriverWrench, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
 
 const BusinessSummary = () => {
+    const navigate = useNavigate()
     return (
         <div className='my-32 '>
             <div>
@@ -35,9 +37,9 @@ const BusinessSummary = () => {
                         <h1 className='text-4xl text-[#09afb5]'>Have any question about us or get a product request?</h1>
                         <p className='text-xl text-blue-900'>Don't hesitated to Contact us</p>
                     </div>
-                    <div className='flex '>
+                    <div className='sm:flex '>
                         <button className="btn mr-4 rounded-lg bg-[#1bb0b3] border-0 btn-xs sm:btn-sm md:btn-md lg:btn-md">Request For Quote</button>
-                        <button className="btn  rounded-lg bg-blue-900 btn-xs border-0 sm:btn-sm md:btn-md lg:btn-md">Contact Us</button>
+                        <button onClick={()=>navigate('/contactUs')} className="btn  rounded-lg bg-blue-900 btn-xs border-0 sm:btn-sm md:btn-md lg:btn-md">Contact Us</button>
                     </div>
                 </div>
             </div>
