@@ -29,10 +29,15 @@ import ManageOrders from './Pages/Dashboard/ManageOrders';
 import UpdateProduct from './Pages/Tools/UpdateProduct';
 import AllProducts from './Pages/Dashboard/AllProducts';
 import ContactUs from './Pages/Contact/ContactUs';
-
+import Aos from "aos";
+import "aos/dist/aos.css"
+import { useEffect } from 'react';
 function App() {
   const user = useAuthState(auth)
   const [admin] = useFindAdmin(user);
+  useEffect(()=>{
+    Aos.init({})
+    },[])
   return (
     <div>
       <Navbar />
@@ -44,6 +49,7 @@ function App() {
         <Route path='/purchase/:id' element={<Purchase />}></Route>
         <Route path='/signUp' element={<SignUp />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
+        <Route path='/manageProducts' element={<ManageProduct />}></Route>
         <Route path='/addProduct' element={<AddProduct />}></Route>
         <Route path='/myOrders' element={<MyOrders />}></Route>
         <Route path='/contactUs' element={<ContactUs />}></Route>

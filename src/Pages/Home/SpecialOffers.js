@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 const SpecialOffers = () => {
     const [click, setClick] = useState(false)
     return (
-        <div className='bg-no-repeat h-[600px] bg-fixed ' style={{
+        <div  className='bg-no-repeat h-[600px] bg-fixed ' style={{
             backgroundImage: `url(https://static.vecteezy.com/system/resources/previews/005/390/356/non_2x/two-different-color-backgrounds-blue-and-yellow-vector.jpg)`,
         }} >
             <div className='lg:w-2/4 my-32 pt-32  mx-auto items-center'>
               {
                 click&&  <marquee className='text-red-500 text-xl font-bold' behavior="" direction="">Congratulations! <span className='text-pink-600'>Congratulations!</span> <span className='text-[#6b1dd1]'>Congratulations!</span> You Get 70% Discount </marquee>
               }
-                <div>
+                <div data-aos-delay="500" data-aos="fade-up-right">
                     <h1 className='text-5xl font-bold text-[#6b1dd1]'>SPECIAL </h1>
                     <h1 className='text-5xl font-bold text-[#e00b99]'>OFFER</h1>
                 </div>
-                <div className='lg:w-2/4 mx-auto text-white font-bold' >
+                <div data-aos-delay="500" data-aos="fade-up-left" className='lg:w-2/4 mx-auto text-white font-bold' >
                     {
                         click? <p>Wow Nice, Thank's for click it your ar the lucky est person on this website that's why we will give you a beautiful gift like a 70% Discount. Wow congratulations </p> : <p>SAMPLE TEXT. CLICK TO SELECT THE TEXT BOX. CLICK AGAIN OR DOUBLE CLICK TO START EDITING THE TEXT</p>
                     }

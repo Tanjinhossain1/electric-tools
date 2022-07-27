@@ -10,7 +10,7 @@ import useFindAdmin from '../hooks/useFindAdmin';
 import auth from '../../firebase.init';
 const Tools = () => {
     const navigate = useNavigate();
-    const [light, setLight] = useState(true);
+    const [light, setLight] = useState(false);
     const [plier, setPlier] = useState(false);
     const [wire, setWire] = useState(false);
     const [meter, setMeter] = useState(false);
@@ -63,18 +63,21 @@ const Tools = () => {
 
                         }} className={`text-xl border-b-4 ${meter && 'text-orange-600 border-b-orange-500'}`}>Meter</button>
                     </div>
-                    <div className='grid lg:grid-cols-2 '>
+                    <div className='grid md:grid-cols-2 '>
                         {
-                            light && lightCategory.slice(0, 4).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
+                            light && lightCategory.slice(0, 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
                         }
                         {
-                            plier && pliersCategory.slice(0, 4).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
+                            plier && pliersCategory.slice(0, 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
                         }
                         {
-                            wire && wireCategory.slice(0, 4).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
+                            wire && wireCategory.slice(0, 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
                         }
                         {
-                            meter && meterCategory.slice(0, 4).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
+                            meter && meterCategory.slice(0, 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
+                        }
+                        {
+                            !light& !plier& !wire &!meter &&  tools.slice(0, 6).map(tool => <Tool key={tool._id} tool={tool}></Tool>)
                         }
 
                     </div>

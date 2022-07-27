@@ -15,9 +15,9 @@ const Navbar = () => {
         {user &&
             <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
         }
-        <li className='text-xl'><Link to='/allProducts'>AllProducts</Link></li>
+        <li className='text-xl'><Link to='/allProducts'>Shop</Link></li>
         {
-            !user && <li className='text-xl'><Link to='/myOrders'>MyOrders</Link></li>
+            !user && <li className='text-xl'><Link to='/myOrders'>Orders</Link></li>
         }
 
         <li className='text-xl'><Link to='/addProduct'>Add Product</Link></li>
@@ -29,7 +29,8 @@ const Navbar = () => {
         </>
         <div class="dropdown  dropdown-hover hidden xl:flex ">
             <label tabindex="0" class="text-xl">Pages <FontAwesomeIcon icon={faAngleDown} /></label>
-            <ul tabindex="0" class="dropdown-content menu xl:mt-72 p-2 shadow bg-base-100 rounded-box w-40">
+            <ul tabindex="0" class="dropdown-content menu xl:mt-72 p-2 shadow bg-base-100 rounded-box w-48">
+                <li className='text-xl'><Link to='/manageProducts'>ManageProducts</Link></li>
                 <li className='text-xl'><Link to='/myProfile'>My Profile</Link></li>
                 <li className='text-xl'><Link to='/addReview'>Add Review</Link></li>
                 <li className='text-xl'><Link to='/blog'>Blog</Link></li>

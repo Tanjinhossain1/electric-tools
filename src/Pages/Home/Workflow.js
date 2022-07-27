@@ -7,8 +7,8 @@ const Workflow = () => {
                 <p>PROCESS WORKFLOW</p>
                 <h1 className='text-3xl font-bold mt-4'>How It Works</h1>
             </div>
-            <div className='grid gap-12 grid-cols-1  lg:grid-cols-3'>
-                <div className='text-center'>
+            <div  className='grid gap-12 grid-cols-1  lg:grid-cols-3'>
+                <div data-aos-delay="600" data-aos="fade-right" className='text-center'>
                     <div className='flex justify-center'>
                         <img className='mb-4' src="https://previewthemes.com/drupal/castron/sites/default/files/gbb-uploads/icon-time.png" alt="" />
                     </div>
@@ -22,7 +22,7 @@ const Workflow = () => {
                     <p className='text-xl'>Book Instantly</p>
                     <p>We'll confirm your appointment and take care of payment electronically and securely.</p>
                 </div>
-                <div className='text-center'>
+                <div data-aos-delay="600" data-aos="fade-left" className='text-center'>
                     <div className='flex justify-center'>
                     <img className='mb-4' src="https://previewthemes.com/drupal/castron/sites/default/files/gbb-uploads/icon-pro.png" alt="" />
                     </div>

@@ -12,12 +12,14 @@ const Tool = ({ tool }) => {
     const { name, description, price, img, minimumQuantity, availableQuantity, _id } = tool;
 
     return (
-        <div className='rounded-lg border ease-in duration-700 hover:text-white hover:shadow-2xl hover:bg-black shadow-lg p-4 m-6'>
-            <img className='w-full  h-[500px] rounded-lg' src={img} alt="" />
+        <div data-aos-delay="300" data-aos="fade-right" className='rounded-lg mt-44 border ease-in duration-700 hover:text-white hover:shadow-2xl hover:bg-black shadow-lg p-4 m-6'>
+           <div className='flex justify-center '>
+           <img className='w-[300px] mt-[-150px] bg-gradient-to-t  from-[#d4ccc3]  to-[#b7ada7] h-[300px] rounded-full ' src={img} alt="" />
+           </div>
             <div>
-                <h1 className='text-xl'>Name: {name}</h1>
+                <h1 className='text-xl mt-4'>Name: {name}</h1>
                 <h1>Price: <span className='text-pink-500 font-bold'>{price}$</span></h1>
-                <div className='flex justify-between'>
+                <div className='xl:flex justify-between'>
                     <h1>MinimumQuantity: <span className='text-pink-600 font-bold'>{minimumQuantity}</span></h1>
                     <h1>availableQuantity: <span className='text-pink-600 font-bold'>{availableQuantity}</span></h1>
                 </div>

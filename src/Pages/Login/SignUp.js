@@ -55,7 +55,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input className="input input-bordered w-full max-w-xs" type='text' placeholder='Your Name' {...register("name", {
+                                <input className="input input-bordered input-primary w-full max-w-xs " type='text' placeholder='Your Name' {...register("name", {
                                     required: {
                                         value: true,
                                         message: 'Name is required'
@@ -68,7 +68,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input className="input input-bordered w-full max-w-xs"
+                                <input className="input input-bordered input-primary w-full max-w-xs "
                                     placeholder='Your Email'
                                     type='email'
                                     {...register("email", {
@@ -90,7 +90,7 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input className="input input-bordered w-full max-w-xs"
+                                <input className="input input-bordered input-primary w-full max-w-xs "
                                     placeholder='Your Password'
                                     type='password'
                                     {...register("password", {

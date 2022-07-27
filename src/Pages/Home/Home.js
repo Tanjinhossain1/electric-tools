@@ -7,6 +7,7 @@ import Delevery from './Delevery';
 import SpecialOffers from './SpecialOffers';
 import TrendingTools from './TrendingTools';
 import UserReviews from './UserReviews';
+import VideoTools from './VideoTools';
 import WeHelpWith from './WeHelpWith';
 import Workflow from './Workflow';
 
@@ -23,6 +24,7 @@ const Home = () => {
             <SpecialOffers />
             <Workflow />
             <UserReviews />
+            <VideoTools />
         </div>
     );
 };

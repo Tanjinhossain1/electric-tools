@@ -41,9 +41,9 @@ const AllProducts = () => {
                        }
                     </div>
 
-                    <div className='flex justify-end pr-6 items-center'>
+                    {/* <div className='flex justify-end pr-6 items-center'>
                         <button onClick={() => navigate('/allProducts')} className='text-end text-2xl font-bold text-pink-600'>See More <FontAwesomeIcon icon={faArrowRight} /> </button>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
