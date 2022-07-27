@@ -1,7 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFireFlameCurved,faArrowRight, faHouse, faRocket, faFan } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+
 const WeHelpWith = () => {
+    const navigate = useNavigate()
+
     return (
         <div   className='mt-32'>
             <h1 className='text-4xl text-center font-bold '>What Can We Help You With?</h1>
@@ -47,7 +51,7 @@ const WeHelpWith = () => {
             <div className='bg-[#ffe700] py-12'>
                <div className='lg:flex justify-between w-3/4  mx-auto'>
                <p data-aos-delay="300" data-aos="fade-right" className='text-2xl font-semibold'>Looking For A Qulity And Afffordable For Your Next Trouble?</p>
-               <button data-aos-delay="300" data-aos="fade-left" class="text-white hover:bg-blue-500 font-bold px-8 py-2 bg-blue-600 border-0"><span>Reed More</span> <FontAwesomeIcon className=' ml-3 font-bold' icon={faArrowRight} /> </button>
+               <button onClick={()=>navigate('/blog')} data-aos-delay="300" data-aos="fade-left" class="text-white hover:bg-blue-500 font-bold px-8 py-2 bg-blue-600 border-0"><span>Reed More</span> <FontAwesomeIcon className=' ml-3 font-bold' icon={faArrowRight} /> </button>
 
                </div>
             </div>
