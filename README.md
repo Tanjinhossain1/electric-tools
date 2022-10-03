@@ -24,7 +24,7 @@
 #### 2. Node.js
 #### 3. MongoDB
 #### 4. Firebase
-#### 5. Express.sj
+#### 5. Express.js
 #### 6. React Query
 #### 7. React Router Dom
 #### 8. Tailwind
