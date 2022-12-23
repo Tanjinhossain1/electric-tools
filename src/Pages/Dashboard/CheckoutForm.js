@@ -15,7 +15,7 @@ const CheckoutForm = ({ order }) => {
         const { newPrice } = order[0];
         console.log(newPrice)
         if (newPrice) {
-            fetch(`https://electric-tools.herokuapp.com/create-payment`, {
+            fetch(`https://electric-tools.onrender.com/create-payment`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -74,7 +74,7 @@ const CheckoutForm = ({ order }) => {
         }
         if (paymentIntent) {
             setLoading(false)
-            fetch(`https://electric-tools.herokuapp.com/purchase/${_id}`, {
+            fetch(`https://electric-tools.onrender.com/purchase/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

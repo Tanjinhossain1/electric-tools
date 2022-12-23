@@ -7,7 +7,7 @@ const useAllUser = (user) => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://electric-tools.herokuapp.com/allUser/${email}`, {
+            fetch(`https://electric-tools.onrender.com/allUser/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

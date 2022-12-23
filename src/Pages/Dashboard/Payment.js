@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const Payment = () => {
     const { id } = useParams();
     const { isLoading, data: order } = useQuery('tools', () =>
-        fetch(`https://electric-tools.herokuapp.com/orders/${id}`,).then(res =>
+        fetch(`https://electric-tools.onrender.com/orders/${id}`,).then(res =>
             res.json()
         )
     )

@@ -15,7 +15,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const UserReviews = () => {
     const { isLoading, data: reviews } = useQuery('reviews', () =>
-        fetch(`https://electric-tools.herokuapp.com/reviews`).then(res =>
+        fetch(`https://electric-tools.onrender.com/reviews`).then(res =>
             res.json()
         )
     )

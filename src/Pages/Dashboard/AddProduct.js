@@ -32,7 +32,7 @@ const AddProduct = () => {
                     if (+minimumQuantity > 0 && +availableQuantity > 0) {
                         if (+price > 0) {
                             if (+minimumQuantity < +availableQuantity) {
-                                fetch(`https://electric-tools.herokuapp.com/addProduct`, {
+                                fetch(`https://electric-tools.onrender.com/addProduct`, {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json',

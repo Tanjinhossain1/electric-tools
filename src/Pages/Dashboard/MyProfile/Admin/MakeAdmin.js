@@ -5,7 +5,7 @@ import User from './User';
 
 const MakeAdmin = () => {
     const { isLoading, data: allUser, refetch } = useQuery('users', () =>
-        fetch(`https://electric-tools.herokuapp.com/showAllUser`,).then(res =>
+        fetch(`https://electric-tools.onrender.com/showAllUser`,).then(res =>
             res.json()
         )
     )

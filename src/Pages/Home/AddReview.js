@@ -10,7 +10,7 @@ const AddReview = () => {
         if (description.length > 130){
             toast.error('You can type only 130 words')
         }else{
-            fetch(`https://electric-tools.herokuapp.com/addReview`, {
+            fetch(`https://electric-tools.onrender.com/addReview`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

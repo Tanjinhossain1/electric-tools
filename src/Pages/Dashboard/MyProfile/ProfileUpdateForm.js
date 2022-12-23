@@ -23,7 +23,7 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
         console.log(profileDetail)
         // if (profile.length < 1) {
         console.log(_id)
-        fetch(`https://electric-tools.herokuapp.com/profileUpdate/${_id}`, {
+        fetch(`https://electric-tools.onrender.com/profileUpdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
