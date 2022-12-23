@@ -6,7 +6,7 @@ const useFindAdmin = (user) => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`${process.env.REACT_APP_BACKEND_URL}findAdmin/${user?.email}`, {
+            fetch(`https://electric-tools.onrender.com/findAdmin/${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'content-Type': 'application/json'

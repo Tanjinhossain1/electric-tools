@@ -13,7 +13,7 @@ const Purchase = () => {
     const [quantity, setQuantity] = useState('')
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { isLoading, data: tool } = useQuery(['tool'], () =>
-        fetch(`${process.env.REACT_APP_BACKEND_URL}tools/${id}`).then(res =>
+        fetch(`https://electric-tools.onrender.com/tools/${id}`).then(res =>
             res.json()
         )
     )
@@ -36,7 +36,7 @@ const Purchase = () => {
         if (availableQuantity >= +quantity) {
             if (minimumQuantity <= data.minimumQuantity) {
                 const newPrice = +data.minimumQuantity * price
-                fetch(`${process.env.REACT_APP_BACKEND_URL}purchase`, {
+                fetch(`https://electric-tools.onrender.com/purchase`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

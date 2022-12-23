@@ -10,7 +10,7 @@ const AddReview = () => {
         if (description.length > 130){
             toast.error('You can type only 130 words')
         }else{
-            fetch(`${process.env.REACT_APP_BACKEND_URL}addReview`, {
+            fetch(`https://electric-tools.onrender.com/addReview`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
