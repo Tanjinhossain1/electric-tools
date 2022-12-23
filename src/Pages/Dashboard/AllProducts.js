@@ -11,7 +11,7 @@ const AllProducts = () => {
     const navigate = useNavigate();
     const [toolSearch,setToolSearch] = useState(null)
     const { isLoading, data: tools } = useQuery('tools', () =>
-        fetch(`https://electric-tools.onrender.com/tools`).then(res =>
+        fetch(`${process.env.REACT_APP_BACKEND_URL}tools`).then(res =>
             res.json()
         )
     )

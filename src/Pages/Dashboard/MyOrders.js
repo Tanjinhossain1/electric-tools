@@ -15,7 +15,7 @@ const MyOrders = () => {
     //     event.target.reset()
     // }
     const { isLoading, data: orders, refetch } = useQuery('orders', () =>
-        fetch(`https://electric-tools.onrender.com/orders`).then(res =>
+        fetch(`${process.env.REACT_APP_BACKEND_URL}orders`).then(res =>
             res.json()
         )
     )

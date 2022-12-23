@@ -9,7 +9,7 @@ const Order = ({ order, refetch, index }) => {
     const [open, setOpen] = useState(false)
     const deleteOrder = (id) => {
         if (!paid) {
-            fetch(`https://electric-tools.onrender.com/deletePurchaseTool/${id}`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}deletePurchaseTool/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

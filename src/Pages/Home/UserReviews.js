@@ -15,7 +15,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const UserReviews = () => {
     const { isLoading, data: reviews } = useQuery('reviews', () =>
-        fetch(`https://electric-tools.onrender.com/reviews`).then(res =>
+        fetch(`${process.env.REACT_APP_BACKEND_URL}reviews`).then(res =>
             res.json()
         )
     )

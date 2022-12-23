@@ -23,7 +23,7 @@ const ProfileUpdateForm = ({ children, profile, refetch }) => {
         console.log(profileDetail)
         // if (profile.length < 1) {
         console.log(_id)
-        fetch(`https://electric-tools.onrender.com/profileUpdate/${_id}`, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}profileUpdate/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

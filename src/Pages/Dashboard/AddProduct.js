@@ -32,7 +32,7 @@ const AddProduct = () => {
                     if (+minimumQuantity > 0 && +availableQuantity > 0) {
                         if (+price > 0) {
                             if (+minimumQuantity < +availableQuantity) {
-                                fetch(`https://electric-tools.onrender.com/addProduct`, {
+                                fetch(`${process.env.REACT_APP_BACKEND_URL}addProduct`, {
                                     method: 'POST',
                                     headers: {
                                         'content-type': 'application/json',

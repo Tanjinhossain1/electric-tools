@@ -5,7 +5,7 @@ import ManageOrder from './ManageOrder';
 
 const ManageOrders = () => {
     const { isLoading, data: manageOrders, refetch } = useQuery('manageOrders', () =>
-        fetch(`https://electric-tools.onrender.com/allOrders`,).then(res =>
+        fetch(`${process.env.REACT_APP_BACKEND_URL}allOrders`,).then(res =>
             res.json()
         )
     )

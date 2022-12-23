@@ -9,7 +9,7 @@ import ProfileUpdateForm from './ProfileUpdateForm';
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const { isLoading, data: profile, refetch } = useQuery(['profile'], () =>
-    fetch(`https://electric-tools.onrender.com/profile?email=${user?.email}`).then(res =>
+    fetch(`${process.env.REACT_APP_BACKEND_URL}profile?email=${user?.email}`).then(res =>
       res.json()
     )
   )

@@ -6,7 +6,7 @@ const ManageTool = ({ tool, refetch }) => {
     const [open, setOpen] = useState(false)
     const deleteProduct = (id) => {
         // console.log('clicked',id)
-        fetch(`https://electric-tools.onrender.com/deleteProduct/${id}`, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}deleteProduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

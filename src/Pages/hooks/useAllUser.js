@@ -7,7 +7,7 @@ const useAllUser = (user) => {
         const email = user?.user?.email;
         const currentUser = { email: email };
         if (email) {
-            fetch(`https://electric-tools.onrender.com/allUser/${email}`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}allUser/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

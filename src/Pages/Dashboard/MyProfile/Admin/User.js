@@ -8,7 +8,7 @@ const User = ({ user, refetch }) => {
     const { email, role, _id } = user;
     const navigate = useNavigate()
     const makeAdmin = (id) => {
-        fetch(`https://electric-tools.onrender.com/makeAdmin/${id}`, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}makeAdmin/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

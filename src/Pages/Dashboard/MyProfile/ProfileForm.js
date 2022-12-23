@@ -21,7 +21,7 @@ const ProfileForm = ({ children, profile, refetch }) => {
         const linkDin = event.target.linkDin.value;
         const profileDetail = { name, email, education, location, number, linkDin };
         if (profile.length < 1) {
-            fetch(`https://electric-tools.onrender.com/addProfile`, {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}addProfile`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

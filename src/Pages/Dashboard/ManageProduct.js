@@ -6,7 +6,7 @@ import ManageTool from './ManageTool';
 const ManageProduct = () => {
 
     const { isLoading, data: tools, refetch } = useQuery('tools', () =>
-        fetch(`https://electric-tools.onrender.com/tools`).then(res =>
+        fetch(`${process.env.REACT_APP_BACKEND_URL}tools`).then(res =>
             res.json()
         )
     )
