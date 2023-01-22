@@ -10,7 +10,7 @@ const TrendingTools = () => {
                     <p>115mm machine</p>
                 </div>
                 <div  data-aos-delay="500" data-aos="fade-right" className='m-4'>
-                    <img className='border' src="https://www.technobuffalo.com/sites/technobuffalo.com/files/field/image/2020/02/worx-wx176l-switchdriver.jpg?itok=WgVTOjlY" alt="" />
+                    <img className='border' src="https://5.imimg.com/data5/SELLER/Default/2022/1/IX/RA/MN/106623609/20mm-demolition-hammer-500x500.jpg" alt="" />
                     <p>Electric Drill</p>
                 </div>
                 <div  data-aos-delay="500" data-aos="fade-left" className='m-4'>
