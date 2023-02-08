@@ -4,9 +4,8 @@ import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAllUser from '../hooks/useAllUser';
-import Loading from '../Sheared/Loading';
-import { async } from '@firebase/util';
-import { toast } from 'react-toastify';
+import Loading from '../Sheared/Loading'; 
+import { toast } from 'react-toastify'; 
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -40,7 +39,7 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div> 
             <div className="w-3/4 md:w-3/4  lg:w-2/4 xl:w-1/4 mx-auto my-24">
                 <div className=" flex-col lg:flex-row-reverse">
                     <div className="border-2 border-blue-600 rounded-lg  card p-2 flex-shrink-0 shadow-2xl bg-base-100">
@@ -111,7 +110,7 @@ const Login = () => {
                         <button onClick={() => signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
                     </div>
                 </div>
-            </div >
+            </div > 
         </div >
     );
 };

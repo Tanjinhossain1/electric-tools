@@ -12,6 +12,8 @@ const Navbar = () => {
     };
     const navItems = <>
         <li className='text-xl'><Link to='/home'>Home</Link></li>
+        <li className='text-xl'><Link to='/openAi'>Open Ai</Link></li>
+        <li className='text-xl'><Link to='/showHooks'>Show Hooks</Link></li>
         {user &&
             <li className='text-xl'><Link to='/dashboard'>Dashboard</Link></li>
         }

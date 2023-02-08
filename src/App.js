@@ -30,7 +30,9 @@ import AllProducts from "./Pages/Dashboard/AllProducts";
 import ContactUs from "./Pages/Contact/ContactUs";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect } from "react"; 
+import SunliteEditor from "./Pages/SunliteEditor"; 
+import OpenAi from "./Pages/OpenAi/OpenApi"; 
 
 function App() {
   const user = useAuthState(auth);
@@ -41,11 +43,13 @@ function App() {
   return (
     <div>
       <Navbar /> 
-      
+       
       <Routes>
+        <Route path="/openAi" element={ <OpenAi />}></Route> 
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/allProducts" element={<AllProducts />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route> 
+        <Route path="/sunlite" element={<SunliteEditor />}></Route> 
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/purchase/:id" element={<Purchase />}></Route>

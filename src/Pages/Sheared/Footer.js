@@ -6,12 +6,15 @@ const Footer = () => {
     const year = date.getFullYear()
    
     return  (
-       <div>
-        {/* <div className="xl:h-[200px] mt-[-100px] xl:w-[1200px] mx-auto none lg:block bg-black bg-gradient-to-r from-[#9907ed] via-[#326efa] to-[#6f97f2] text-white" >
- <h1>okkkkk</h1>
-        </div> */}
-         <footer className='bg-[#1e2442]'>
-            <div className="footer  px-32 pt-20 text-neutral-content">
+       <div className='bg-[#1e2442] '> 
+         {/* <div className="xl:h-[200px] mt-[-100px] mx:0 ml:0 xl:w-[1200px] mx-auto none lg:block bg-black bg-gradient-to-r from-[#9907ed] via-[#326efa] to-[#6f97f2] text-white" >
+             <h1>
+                ooo
+             </h1>
+        </div>   */}
+         <footer className='bg-[#1e2442]  '>
+
+            <div className="footer py-32 px-32  text-neutral-content">
                 <div>
                     <span className="footer-title">Services</span>
                     <Link to='/' className="link link-hover">Branding</Link>
