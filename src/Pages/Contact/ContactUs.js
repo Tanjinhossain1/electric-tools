@@ -5,9 +5,9 @@ import { faFacebook, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-
 
 const ContactUs = () => {
     return (
-        <div className='my-52'>
+        <div className='py-52'>
            
-            <div className='bg-[#1a1e2d] py-32  '>
+            <div className='bg-[#1a1e2d] py-48  '>
                 <p className='text-3xl font-bold text-center text-white'>Contact Us</p>
             </div>
             <div>

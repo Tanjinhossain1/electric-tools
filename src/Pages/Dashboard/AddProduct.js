@@ -72,7 +72,7 @@ const AddProduct = () => {
             })
     };
     return (
-        <div className='lg:w-3/4 mx-auto my-12'>
+        <div className='lg:w-3/4 mx-auto py-48'>
             <h1 className='text-center font-bold mb-12 text-pink-700 text-xl'>Add Product</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid justify-center lg:grid-cols-2'>

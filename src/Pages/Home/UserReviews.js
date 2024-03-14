@@ -81,7 +81,7 @@ const UserReviews = () => {
                       {review.description.slice(0, 130)}
                     </p>
                     <p className="font-bold text-[#4e4f4f]">
-                      Rating:{" "}
+                      {" "}
                       <span className="text-pink-600 font-bold">
                         {stars} 
                         {/* <FontAwesomeIcon

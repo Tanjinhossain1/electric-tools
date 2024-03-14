@@ -6,9 +6,9 @@ import Work from './Work';
 const MyPortfolio = () => {
     const navigate = useNavigate()
     return (
-        <div className=''>
+        <div className='py-36'>
             <div className='text-3xl mb-6'>
-                <h1 className='text-center'>Name: Tanjin Hossain</h1>
+                <h1 className='text-center text-black'>Name: Tanjin Hossain</h1>
             </div>
            
             <Skills />

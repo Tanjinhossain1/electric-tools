@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <div className='lg:w-2/4 mb-12 mx-auto'>
+            <div className='lg:w-2/4 mb-12 mx-auto py-48'>
                 <div className='mt-12'>
                     <h1 className='text-2xl font-semibold'>1. How will you improve the performance of a React Application?</h1>
                     <p className='font-semibold'>ANS: <small> When we need to render the multiple elements in a component or return a group of related items, using a div or another element to enclose the elements could add a node in the DOM. So to avoid this, we can use React Fragmentin React, which will not add any other nodes to the DOM.

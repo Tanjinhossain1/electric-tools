@@ -28,9 +28,9 @@ const AddReview = () => {
     }
     return (
         <div>
-            <div className="hero  min-h-screen bg-base-200">
+            <div className="hero py-48 min-h-screen ">
                 <form onSubmit={addReview} className="hero-content ">
-                    <div className="card mt-48 flex-shrink-0   shadow-2xl bg-base-100">
+                    <div className="card mt-48 flex-shrink-0   shadow-2xl bg-gray-100">
                         <div className="card-body w-[320px] sm:w-[450px]">
                             <div className="form-control ">
                                 <label className="label">

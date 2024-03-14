@@ -54,19 +54,19 @@ const ProfileForm = ({ children, profile, refetch }) => {
     return (
         <form className='' onSubmit={addProfile}>
             <div className='lg:w-full sm:w-2/4 mb-2 w-3/4 mx-auto'>
-                <label className="label"><span className="label-text">Education</span></label>
+                <label className="label"><span className="label-text text-black">Education</span></label>
                 <input type="text" name='education' placeholder='Your Education' className="input input-bordered input-info w-full max-w-xs" required />
             </div>
             <div className='lg:w-full sm:w-2/4 mb-2 w-3/4 mx-auto'>
-                <label className="label"><span className="label-text">Location</span></label>
+                <label className="label"><span className="label-text text-black">Location</span></label>
                 <input type="text" name='location' placeholder='Your Location' className="input  input-bordered input-info w-full max-w-xs" required />
             </div>
             <div className='lg:w-full sm:w-2/4 mb-2 w-3/4 mx-auto'>
-                <label className="label"><span className="label-text">Phone Number</span></label>
+                <label className="label"><span className="label-text text-black">Phone Number</span></label>
                 <input type="number" name='number' placeholder='Your Phone Number' className="input input-bordered input-info w-full max-w-xs" required />
             </div>
             <div className='lg:w-full sm:w-2/4 mb-2 w-3/4 mx-auto'>
-                <label className="label"><span className="label-text">LinkDin</span></label>
+                <label className="label"><span className="label-text text-black">LinkDin</span></label>
                 <input type="text" name='linkDin' placeholder='Your LinkDin Profile Link' className="input input-bordered input-info w-full max-w-xs" required />
             </div>
             <div className='sm:w-2/4 md:w-2/4 lg:w-full w-2/4 mx-auto'>

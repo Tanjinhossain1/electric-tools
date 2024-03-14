@@ -17,7 +17,7 @@ const ManageProduct = () => {
 
     return (
         <div>
-            <div className="grid lg:w-3/4 mx-auto lg:grid-cols-2 ">
+            <div className="grid lg:w-3/4 mx-auto lg:grid-cols-2 py-48">
 
                 {
                     tools.map(tool => <ManageTool key={tool._id} refetch={refetch} tool={tool}>
