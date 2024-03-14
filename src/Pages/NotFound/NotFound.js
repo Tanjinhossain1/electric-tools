@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-        <div>
-                <div className='flex justify-center my-32'>
+        <div className="bg-[#ebebeb]">
+                <div className='flex justify-center py-32'>
                     <div>
                         <img className='lg:w-3/4' src="https://i.ibb.co/FhzQvWh/ops-removebg-preview.png" alt="" />
                         <h1 className='text-6xl font-bold text-gray-500'>PAGE NOT FOUND</h1>

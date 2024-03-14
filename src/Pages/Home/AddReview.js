@@ -30,9 +30,9 @@ const AddReview = () => {
         <div>
             <div className="hero  min-h-screen bg-base-200">
                 <form onSubmit={addReview} className="hero-content ">
-                    <div className="card flex-shrink-0   shadow-2xl bg-base-100">
+                    <div className="card mt-48 flex-shrink-0   shadow-2xl bg-base-100">
                         <div className="card-body w-[320px] sm:w-[450px]">
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Add Ratings</span>
                                 </label>

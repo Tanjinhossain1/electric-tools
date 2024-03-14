@@ -13,7 +13,7 @@ import Workflow from "./Workflow";
 
 const Home = () => {
   return (
-    <div >
+    <div className="bg-[#ebebeb]">
       <Banner />
       {/* <button><a  href="https://s1-filecr.xyz/e673cc7a55999dbd?ref=377c833758118aa47ddf24251298d1a4" download>Download ap</a></button> */}
       <Category />

@@ -25,7 +25,7 @@ const Order = ({ order, refetch, index }) => {
 
     }
     return (
-        <tr>
+        <tr className={`text-center   text-[#666666] ${paid ?' bg-[#eaffe8] ':"bg-[#deebff]"}`}>
             <th>{index + 1}</th>
             <th>{toolName}</th>
             <td>{newPrice}</td>

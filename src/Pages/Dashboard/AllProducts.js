@@ -25,7 +25,7 @@ const AllProducts = () => {
         return (
             <div >
                 <div className='w-3/4 mx-auto  '>
-                    <div className='flex justify-between mt-48'>
+                    <div className='flex justify-between pt-48'>
                         <h1 className='text-3xl font-bold text-gray-600 mb-2'>Tools:</h1>
                         <form>
                             <input onChange={(e)=>setToolSearch(e.target.value)} placeholder='Search Tools' className='input input-bordered input-primary w-[500px] max-w-xs' type="search" name="" id="" />
