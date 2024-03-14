@@ -26,7 +26,7 @@ const OpenAi = () => {
     }
   }
   return (
-    <div className="bg-blue-800 min-h-screen">
+    <div className="bg-blue-800 min-h-screen  pt-48">
       <ShowFilterInput />
 
       {Object.values(option).length === 0 ? (

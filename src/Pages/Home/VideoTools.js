@@ -7,10 +7,10 @@ const VideoTools = () => {
         <div>
             <div className='my-32 lg:flex justify-between w-3/4 mx-auto '>
                 <div data-aos-delay="300" data-aos="fade-right">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rBYI10QeoRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" controls allowfullscreen></iframe>
+                <iframe className='lg:w-[550px]' height="315" src="https://www.youtube.com/embed/rBYI10QeoRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" controls allowfullscreen></iframe>
                 </div>
                 <div data-aos-delay="300" data-aos="fade-left" className='ml-12'>
-                    <p>All of our Services are backed by 100% satisfaction guarantee.Our electronics can do anything from new security lighting for you outdoors to a whole home generator that will keep your appliances working during a power outage. Our Installation service are always done promptly and safely.</p>
+                    <p className='text-[#545454]'>All of our Services are backed by 100% satisfaction guarantee.Our electronics can do anything from new security lighting for you outdoors to a whole home generator that will keep your appliances working during a power outage. Our Installation service are always done promptly and safely.</p>
                     <p className='mt-6 mb-2'> <FontAwesomeIcon className='text-xl text-orange-600 mr-6' icon={faCheck} /> Full service electrical layout design </p>
                     <p className='mb-2'> <FontAwesomeIcon className='text-xl text-orange-600 mr-6' icon={faCheck} /> Wiring and installation/upgrades</p>
                     <p className='mb-2'> <FontAwesomeIcon className='text-xl text-orange-600 mr-6' icon={faCheck} /> Emergency Power solutions </p>

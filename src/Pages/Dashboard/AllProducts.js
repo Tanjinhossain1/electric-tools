@@ -23,9 +23,9 @@ const AllProducts = () => {
     console.log(tools, 'tools')
     if (tools) {
         return (
-            <div className='my-20 '>
-                <div className='w-3/4 mx-auto '>
-                    <div className='flex justify-between'>
+            <div >
+                <div className='w-3/4 mx-auto  '>
+                    <div className='flex justify-between mt-48'>
                         <h1 className='text-3xl font-bold text-gray-600 mb-2'>Tools:</h1>
                         <form>
                             <input onChange={(e)=>setToolSearch(e.target.value)} placeholder='Search Tools' className='input input-bordered input-primary w-[500px] max-w-xs' type="search" name="" id="" />

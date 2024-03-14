@@ -16,7 +16,7 @@ const Footer = () => {
 
             <div className="footer py-32 px-32  text-neutral-content">
                 <div>
-                    <span className="footer-title">Services</span>
+                    <span className="footer-title text-white">Services</span>
                     <Link to='/' className="link link-hover">Branding</Link>
                     <Link to='/' className="link link-hover">Design</Link>
                     <Link to='/' className="link link-hover">Marketing</Link>

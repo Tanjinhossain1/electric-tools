@@ -41,8 +41,9 @@ function App() {
     Aos.init({});
   }, []);
   return (
-    <div>
-      <Navbar /> 
+    <div className="bg-[#ebebeb]">
+    
+     <Navbar /> 
        
       <Routes>
         <Route path="/openAi" element={ <OpenAi />}></Route> 
