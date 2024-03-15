@@ -25,7 +25,7 @@ const Home = () => {
       <SpecialOffers />
       <Workflow />
       <UserReviews />
-      <VideoTools />
+      <VideoTools /> 
     </div>
   );
 };

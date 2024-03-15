@@ -33,6 +33,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react"; 
 import SunliteEditor from "./Pages/SunliteEditor"; 
 import OpenAi from "./Pages/OpenAi/OpenApi"; 
+import "animate.css";
 
 function App() {
   const user = useAuthState(auth);

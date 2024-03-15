@@ -12,3 +12,18 @@
       opacity: 1;
     }
   } */
+  @keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Move element left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Return element to its original position */
+    }
+}
+
+/* Apply animation to element */
+.fade-left {
+    animation: fadeLeft 0.5s ease-out forwards; /* Apply animation */
+}
