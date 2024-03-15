@@ -40,7 +40,7 @@ const Category = () => {
                     <p className='text-xl text-[#04054a]'>Suggestion offer work some day</p>
                 </div>
                 <div>
-                    <button className="btn btn-outline">Explore Me</button>
+                    <button className="btn btn-outline text-[#04054a] hover:text-white hover:bg-[#04054a]">Explore Me</button>
                 </div>
             </div>
         </div>
