@@ -26,7 +26,7 @@ const Category = () => {
                             <p className='text-center absolute ml-[60px] text-white  -mt-6 '>Purchase Now</p>
                         </div>
                         <div className=' m-5'>
-                            <img className='w-full relative rounded-lg' src="https://thetoolstop.pk/wp-content/uploads/2020/10/A-106007b.jpg" alt="" />
+                            <img className='w-full relative rounded-lg' src="http://www.harden-tools.com/uploads/210302/2-2103021UJ3611.jpg" alt="" />
                             <p className='text-center absolute ml-8 text-white  -mt-12 '>Repairing Tool Set</p>
                             <p className='text-center absolute ml-[60px] text-white  -mt-6 '>Purchase Now</p>
                         </div>

@@ -24,8 +24,8 @@ const WeHelpWith = () => {
                             <p className='w-3/4 mx-auto text-[#6e6e6e]'>Protect your boiler, heating, appliances, electricals, plumbing and drains.</p>
                         </div>
                     </div>
-                    <div data-aos-delay="1000" data-aos="zoom-in">
-                        <img src="https://previewthemes.com/drupal/castron/sites/default/files/gbb-uploads/image-1.png" alt="" />
+                    <div className='h-[80%]'  data-aos-delay="1000" data-aos="zoom-in">
+                        <img src="/png-transparent-electrician-arch-removebg-preview.png" alt="" />
 
                     </div>
                     <div>
